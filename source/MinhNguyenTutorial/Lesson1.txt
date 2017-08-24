@@ -7,12 +7,21 @@ Timesheet: https://docs.google.com/spreadsheets/d/1nbnqImwO1_mOoO0lzXgUB8UCjqbf2
 
 Lesson 1:
 
-1. Pull code from github: https://github.com/vanph/Tutorial.git
+1. Pull code from github: https://github.com/vanph/MinhNguyenCsharp.git
 2. Create HelloWorld project
 3. Modify code and push the updated code to git
 4. Overview VS
 5. Create a console app: Helloworld 
 6. Multiple of 3 and 5 problem 
 7. Book (Name : string, Grade : int)
+8. NET Architectural Components
+https://docs.microsoft.com/en-us/dotnet/standard/components
+9. C# version vs .Net version
+C# Version: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/
+What's New in C# 6: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-6
+What's New in C# 7: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7
+C# version vs .Net version:
+http://dotnetpattern.com/csharp-versions-features(***)
+http://www.tutorialsteacher.com/csharp/csharp-version-history
 
 
