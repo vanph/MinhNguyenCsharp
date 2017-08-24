@@ -1,0 +1,18 @@
+Overview
+Pre-requires:
+	Install visual studio
+	Install git extensions	
+
+Timesheet: https://docs.google.com/spreadsheets/d/1nbnqImwO1_mOoO0lzXgUB8UCjqbf2ogUn8a6m87tpyw/edit#gid=0
+
+Lesson 1:
+
+1. Pull code from github: https://github.com/vanph/Tutorial.git
+2. Create HelloWorld project
+3. Modify code and push the updated code to git
+4. Overview VS
+5. Create a console app: Helloworld 
+6. Multiple of 3 and 5 problem 
+7. Book (Name : string, Grade : int)
+
+
