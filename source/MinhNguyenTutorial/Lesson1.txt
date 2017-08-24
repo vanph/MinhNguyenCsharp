@@ -1,6 +1,6 @@
 Overview
 Pre-requires:
-	Install visual studio
+	Install visual studio => vs 2017
 	Install git extensions	
 
 Timesheet: https://docs.google.com/spreadsheets/d/1nbnqImwO1_mOoO0lzXgUB8UCjqbf2ogUn8a6m87tpyw/edit#gid=0

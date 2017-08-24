@@ -14,7 +14,9 @@ Value types are usually immutable
 - Can not change the value of August 9th, 2002
 Arrays and strings are reference types
 -Strings behave like a value type
-
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types
+Default value: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table
 3.Anonymous Types
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types
 
