@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Practice.Homework.Model;
 
 namespace Practice.Homework
@@ -9,26 +10,39 @@ namespace Practice.Homework
         static void Main(string[] args)
         {
             //Task1();
-            
-            //bai 2 min,max,avg of grade of book
+            //Task2Ver1();
+            Task2Ver2();
+            Console.ReadLine();
+        }
+
+        private static void Task2Ver2()
+        {
             Console.WriteLine("Task 2 :");
-            var book1 = new Book { Name = "html", Grade = 4 };
-            var book2 = new Book { Name = "css", Grade = 2 };
-            var book3 = new Book { Name = "java", Grade = 9 };
-            var book4 = new Book { Name = "c#", Grade = 2 };
-            var book5 = new Book { Name = "sql", Grade = 6 };
-            var book6 = new Book { Name = "matlap", Grade = 5 };
-            var book7 = new Book { Name = "c", Grade = 9 };
-            var book8 = new Book { Name = "c++", Grade = 3 };
-            var book9 = new Book { Name = "engish", Grade = 7 };
-            var book10 = new Book { Name = "asp", Grade = 3 };
-
-            var books = new List<Book> { book1, book2, book3, book4, book5, book6, book7, book8, book9, book10 };
+            var books = GetBooks();
             Console.WriteLine("Book List:");
-            PrintBook(books);
+            PrintBooks(books);
+            
+            var minGrade = books.Min(x => x.Grade);
+            Console.WriteLine($"Min: {minGrade}");
+            // LINQ to objects
+            var minBooks1 = books.Where(x => x.Grade == minGrade).ToList();
+            PrintBooks(minBooks1);
+            var minBooks2 = (from b in books where b.Grade == minGrade select b).ToList();
+            PrintBooks(minBooks2);
+            //Order
+            Console.WriteLine("Books order by Grade Desc:");
+            PrintBooks(books.OrderByDescending(x => x.Grade).ThenBy(x=>x.Name).ToList());
+        }
 
-            var minGrade = Min(books);
-            var maxGrade = Max(books);
+        private static void Task2Ver1()
+        {
+            Console.WriteLine("Task 2 :");
+            var books = GetBooks();
+            Console.WriteLine("Book List:");
+            PrintBooks(books);
+
+            var minGrade = MinBooks(books);
+            var maxGrade = MaxBooks(books);
 
             Console.WriteLine($"Min: {minGrade}");
             Console.WriteLine($"Max:{maxGrade}");
@@ -41,11 +55,26 @@ namespace Practice.Homework
                     Console.WriteLine(book.GetDetail());
                 }
             }
-
-            Console.ReadLine();
         }
 
+        private static List<Book> GetBooks()
+        {
+            var book1 = new Book { Name = "html", Grade = 4 };
+            var book2 = new Book { Name = "css", Grade = 2 };
+            var book3 = new Book { Name = "java", Grade = 9 };
+            var book4 = new Book { Name = "c#", Grade = 2 };
+            var book5 = new Book { Name = "sql", Grade = 6 };
+            var book6 = new Book { Name = "matlap", Grade = 5 };
+            var book7 = new Book { Name = "c", Grade = 9 };
+            var book8 = new Book { Name = "c++", Grade = 3 };
+            var book9 = new Book { Name = "engish", Grade = 7 };
+            var book10 = new Book { Name = "asp", Grade = 3 };
 
+            var books = new List<Book> { book1, book2, book3, book4, book5, book6, book7, book8, book9, book10 };
+
+            return books;
+        }
+        
         private static void Task1()
         {
             Console.WriteLine("Input n = ");
@@ -56,7 +85,7 @@ namespace Practice.Homework
             Console.WriteLine("Sum : " + sum);
         }
         
-        private static void PrintBook(List<Book> books)
+        private static void PrintBooks(List<Book> books)
         {
             foreach (var book in books)
             {
@@ -65,7 +94,7 @@ namespace Practice.Homework
         }
 
         
-       private static int Min(List<Book> books)
+       private static int MinBooks(List<Book> books)
         {
             if (books.Count == 0)
             {
@@ -85,7 +114,7 @@ namespace Practice.Homework
             return imin;
         }
 
-        private static int Max(List<Book> books)
+        private static int MaxBooks(List<Book> books)
         {
             if (books.Count == 0)
             {
