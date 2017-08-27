@@ -7,6 +7,8 @@
  => Please solve this issue.
  For example: The input is not a number.
 
+2. Avg of Books and list books: grade > avg
+
 3. Task: Read File.
 We have: class Employee(FirstName,Surname,EmailAddress)
 You need:

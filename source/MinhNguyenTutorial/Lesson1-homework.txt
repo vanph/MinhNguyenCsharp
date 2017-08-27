@@ -6,4 +6,4 @@
  
  2. Create a list 10 books.
 - Find Min, Max, Avg of grade of the books.
-- (Ignore) Find the book(s) that has the max grade.
+- Find the book(s) that has the min grade.
