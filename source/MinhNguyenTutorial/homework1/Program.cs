@@ -29,9 +29,18 @@ namespace Practice.Homework
             PrintBooks(minBooks1);
             var minBooks2 = (from b in books where b.Grade == minGrade select b).ToList();
             PrintBooks(minBooks2);
+
+            var maxGrade = books.Max(c => c.Grade);
+            Console.WriteLine($"Max : {maxGrade}");
+            var maxBooks3 = books.Where(c => c.Grade == maxGrade).ToList();
+            var maxBooks4= (from d in books where d.Grade == maxGrade select d).ToList();
+            PrintBooks(maxBooks3);
             //Order
             Console.WriteLine("Books order by Grade Desc:");
             PrintBooks(books.OrderByDescending(x => x.Grade).ThenBy(x=>x.Name).ToList());
+
+     
+
         }
 
         private static void Task2Ver1()
