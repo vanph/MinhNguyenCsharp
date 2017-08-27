@@ -10,6 +10,7 @@ namespace SampleConsoleApp
     {
         static void Main(string[] args)
         {
+           
             int a = 10;
             int b = a;
             b = 15;
@@ -55,5 +56,6 @@ namespace SampleConsoleApp
         {
             return a + b;
         }
+
     }
 }
