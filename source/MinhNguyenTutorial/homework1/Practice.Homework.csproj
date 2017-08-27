@@ -7,8 +7,8 @@
     <ProjectGuid>{97B06197-1352-4C45-A471-855943D3A4C8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>homework1</RootNamespace>
-    <AssemblyName>homework1</AssemblyName>
+    <RootNamespace>Practice.Homework</RootNamespace>
+    <AssemblyName>Practice.Homework</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
+    <Compile Include="Calculation.cs" />
+    <Compile Include="Model\Book.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

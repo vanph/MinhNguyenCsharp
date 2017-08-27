@@ -1,3 +1,12 @@
+1.Handle error
+ var input = Console.ReadLine();
+ int n = int.Parse(input);
+
+ => Error when input is not a number.
+
+ => Please solve this issue.
+ For example: The input is not a number.
+
 3. Task: Read File.
 We have: class Employee(FirstName,Surname,EmailAddress)
 You need:
