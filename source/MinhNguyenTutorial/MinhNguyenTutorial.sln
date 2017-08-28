@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{13EFEBED-1DDF-4EDA-BE05-6904F09A74B7}"
 	ProjectSection(SolutionItems) = preProject
@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleConsoleApp", "SampleC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.Homework", "homework1\Practice.Homework.csproj", "{97B06197-1352-4C45-A471-855943D3A4C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.Homeworks-lession2", "Practice.Homeworks-lession2\Practice.Homeworks-lession2.csproj", "{5DBBB029-DB8D-4F8E-A5F1-F47949E0F58B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{97B06197-1352-4C45-A471-855943D3A4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97B06197-1352-4C45-A471-855943D3A4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97B06197-1352-4C45-A471-855943D3A4C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBBB029-DB8D-4F8E-A5F1-F47949E0F58B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBBB029-DB8D-4F8E-A5F1-F47949E0F58B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBBB029-DB8D-4F8E-A5F1-F47949E0F58B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBBB029-DB8D-4F8E-A5F1-F47949E0F58B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
