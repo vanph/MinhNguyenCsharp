@@ -9,40 +9,29 @@ namespace Practice.Homework
     {
         static void Main(string[] args)
         {
-            //Task1();
-            //Task2Ver1();
+         // Task1();
+           // Task2Ver1();
             Task2Ver2();
             Console.ReadLine();
         }
 
-        private static void Task2Ver2()
+        private static void Task1()
         {
-            Console.WriteLine("Task 2 :");
-            var books = GetBooks();
-            Console.WriteLine("Book List:");
-            PrintBooks(books);
-            
-            var minGrade = books.Min(x => x.Grade);
-            Console.WriteLine($"Min: {minGrade}");
-            // LINQ to objects
-            var minBooks1 = books.Where(x => x.Grade == minGrade).ToList();
-            PrintBooks(minBooks1);
-            var minBooks2 = (from b in books where b.Grade == minGrade select b).ToList();
-            PrintBooks(minBooks2);
-
-            var maxGrade = books.Max(c => c.Grade);
-            Console.WriteLine($"Max : {maxGrade}");
-            var maxBooks3 = books.Where(c => c.Grade == maxGrade).ToList();
-            var maxBooks4= (from d in books where d.Grade == maxGrade select d).ToList();
-            PrintBooks(maxBooks3);
-            //Order
-            Console.WriteLine("Books order by Grade Desc:");
-            PrintBooks(books.OrderByDescending(x => x.Grade).ThenBy(x=>x.Name).ToList());
-
-     
+            try
+            {
+                Console.WriteLine("Input n = ");
+                var input = Console.ReadLine();
+                var n = int.Parse(input);
+                var calculation = new Calculation();
+                var sum = calculation.SumMultiplesOf3Or5(n);
+                Console.WriteLine("Sum : " + sum);
+            }
+            catch
+            {
+                Console.WriteLine("The input is not a number.");
+            }
 
         }
-
         private static void Task2Ver1()
         {
             Console.WriteLine("Task 2 :");
@@ -66,6 +55,40 @@ namespace Practice.Homework
             }
         }
 
+        private static void Task2Ver2()
+        {
+            Console.WriteLine("Task 2 :");
+            var books = GetBooks();
+            Console.WriteLine("Book List:");
+            PrintBooks(books);
+            
+           // var minGrade = books.Min(x => x.Grade);
+           // Console.WriteLine($"Min: {minGrade}");
+           // // LINQ to objects
+           //var minBooks1 = books.Where(x => x.Grade == minGrade).ToList();
+           // PrintBooks(minBooks1);
+           // var minBooks2 = (from b in books where b.Grade == minGrade select b).ToList();
+           // PrintBooks(minBooks2);
+
+            var maxGrade = books.Max(c => c.Grade);
+            Console.WriteLine($"Max : {maxGrade}");
+            var maxBooks3 = books.Where(c => c.Grade == maxGrade).ToList();
+            var maxBooks4= (from d in books where d.Grade == maxGrade select d).ToList();
+            PrintBooks(maxBooks3);
+            PrintBooks(maxBooks4);
+            //Order
+            //Console.WriteLine("Books order by Grade Desc:");
+            //PrintBooks(books.OrderByDescending(x => x.Grade).ThenBy(x=>x.Name).ToList());
+
+            var avgGrade = books.Average(f => f.Grade);
+            Console.WriteLine( $"Avg :{avgGrade}" );
+            Console.WriteLine( "list book > avg :" );
+            var list = books.Where( g => g.Grade > avgGrade ).ToList();
+            PrintBooks(list);
+
+
+        }
+
         private static List<Book> GetBooks()
         {
             var book1 = new Book { Name = "html", Grade = 4 };
@@ -84,16 +107,7 @@ namespace Practice.Homework
             return books;
         }
         
-        private static void Task1()
-        {
-            Console.WriteLine("Input n = ");
-            var input = Console.ReadLine();
-            var n = int.Parse(input);
-            var calculation = new Calculation();
-            var sum = calculation.SumMultiplesOf3Or5(n);
-            Console.WriteLine("Sum : " + sum);
-        }
-        
+       
         private static void PrintBooks(List<Book> books)
         {
             foreach (var book in books)
