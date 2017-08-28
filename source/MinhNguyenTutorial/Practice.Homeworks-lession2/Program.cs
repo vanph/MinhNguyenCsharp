@@ -23,16 +23,16 @@ namespace Practice.Homeworks_lession2
 
         }
         private static List<Employee> GetEmployee() {
-           
-            var employee1 = new Employee { EmployeeID = 1 , LastName= "Davolio" , FristName= "Nancy",Title= "Sales Representative",TitleOfCourtesy="Ms.",BirthDate= "1948-12-08 0:00:00" ,Address= "507 - 20th Ave. E.Apt. 2A" ,City= "Seattle",Region= "WA" ,PostalCode= "98122",Country= "USA",HomePhone= "(206) 555-9857", PhotoPath= "http://accweb/emmployees/davolio.bmp" };
-            var employee2 = new Employee { EmployeeID = 2, LastName = "Davolio", FristName = "Nancy", Title = "Sales Representative", TitleOfCourtesy = "Ms.", BirthDate = "1948-12-08 0:00:00", Address = "507 - 20th Ave. E.Apt. 2A", City = "Seattle", Region = "WA", PostalCode = "98122", Country = "USA", HomePhone = "(206) 555-9857", PhotoPath = "http://accweb/emmployees/davolio.bmp" };
+            DateTime date = new DateTime(1934, 2, 3, 2, 34, 12);
+            var employee1 = new Employee { EmployeeID = 1 , LastName= "Davolio" , FristName= "Nancy",Title= "Sales Representative",TitleOfCourtesy="Ms.",BirthDate = date,Address= "507 - 20th Ave. E.Apt. 2A" ,City= "Seattle",Region= "WA" ,PostalCode= "98122",Country= "USA",HomePhone= "(206) 555-9857", PhotoPath= "http://accweb/emmployees/davolio.bmp" };
+            var employee2 = new Employee { EmployeeID = 2, LastName = "Davolio", FristName = "Nancy", Title = "Sales Representative", TitleOfCourtesy = "Ms.", BirthDate = date, Address = "507 - 20th Ave. E.Apt. 2A", City = "Seattle", Region = "WA", PostalCode = "98122", Country = "USA", HomePhone = "(206) 555-9857", PhotoPath = "http://accweb/emmployees/davolio.bmp" };
             var employees = new List<Employee> { employee1, employee2 };
 
             return employees;
         }
 
 
-        private     static void PrintEmployee(List<Employee> employees)
+        private static void PrintEmployee(List<Employee> employees)
         {   
             foreach( var employee in employees)
             {

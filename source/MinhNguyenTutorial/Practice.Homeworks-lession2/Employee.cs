@@ -13,7 +13,8 @@ namespace Practice.Homeworks_lession2
         public string FristName { get; set; }
         public string Title{ get; set; }
         public string TitleOfCourtesy { get; set; }
-        public string BirthDate { get; set; }
+
+        public DateTime BirthDate { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string Region { get; set; }
