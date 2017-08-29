@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Practice.Homework.Model;
 
 namespace Practice.Homework
@@ -11,7 +12,14 @@ namespace Practice.Homework
         {
             //Task1();
             // Task2Ver1();
-            Task2Ver2();
+            //Task2Ver2();
+            
+            var book1 = new Book { Name = "html", Grade = 4, Publisher = "NXB KHKT"};
+            var book2 = new Book { Name = "css", Grade = 4, Publisher = ""};
+            var lst = new List<Book> {book1, book2};
+
+            PrintBooks(lst);
+            
             Console.ReadLine();
         }
 

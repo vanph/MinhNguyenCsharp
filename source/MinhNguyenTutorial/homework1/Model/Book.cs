@@ -7,7 +7,9 @@
 
         public string GetDetail()
         {
-            return $"Name : {Name} - Grade {Grade} ";
+            return $"Name : {Name} - Grade {Grade} - Publisher: {Publisher}";
         }
+
+        public string Publisher { get; set; }
     }
 }
