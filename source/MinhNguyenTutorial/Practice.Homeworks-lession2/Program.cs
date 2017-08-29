@@ -23,15 +23,15 @@ namespace Practice.Homeworks_lession2
 
         }
         private static List<Employee> GetEmployee() {
-            DateTime date = new DateTime(1948, 12, 08, 0, 00,00);
-            DateTime date1 = new DateTime(1952, 02, 19, 0, 00, 00);
-            DateTime date2 = new DateTime(1963, 08, 30, 0, 00, 00);
-            DateTime date3 = new DateTime(1937, 09, 19, 0, 00, 00);
-            DateTime date4 = new DateTime(1955, 03, 04, 0, 00, 00);
-            DateTime date5 = new DateTime(1963, 07, 02, 0, 00, 00);
-            DateTime date6 = new DateTime(1960, 05, 29, 0, 00, 00);
-            DateTime date7 = new DateTime(1958, 01, 09, 0, 00, 00);
-            DateTime date8 = new DateTime(1966, 01, 27, 0, 00, 00);
+            DateTime date = new DateTime(1948, 12, 08);
+            DateTime date1 = new DateTime(1952, 02, 19);
+            DateTime date2 = new DateTime(1963, 08, 30);
+            DateTime date3 = new DateTime(1937, 09, 19);
+            DateTime date4 = new DateTime(1955, 03, 04);
+            DateTime date5 = new DateTime(1963, 07, 02);
+            DateTime date6 = new DateTime(1960, 05, 29);
+            DateTime date7 = new DateTime(1958, 01, 09);
+            DateTime date8 = new DateTime(1966, 01, 27);
             var employee1 = new Employee { EmployeeID = 1 , LastName= "Davolio" , FristName= "Nancy",Title= "Sales Representative",TitleOfCourtesy="Ms.",BirthDate = date,Address= "507 - 20th Ave. E.Apt. 2A" ,City= "Seattle",Region= "WA" ,PostalCode= "98122",Country= "USA",HomePhone= "(206) 555-9857", PhotoPath= "http://accweb/emmployees/davolio.bmp" };
           
             var employee2 = new Employee { EmployeeID = 2, LastName = "Fuller", FristName = "Andrew", Title = "Vice President, Sales", TitleOfCourtesy = "Dr.", BirthDate = date1, Address = "908 W. Capital Way", City = "Tacoma", Region = "WA", PostalCode = "98401", Country = "USA", HomePhone = "(206) 555-9482", PhotoPath = "http://accweb/emmployees/davolio.bmp" };
