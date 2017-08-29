@@ -23,9 +23,25 @@ namespace Practice.Homeworks_lession2
         public string HomePhone { get; set; }
         public string PhotoPath { get; set; }
 
+        public string FullName {
+            get
+            {
+                return TitleOfCourtesy+" " + FristName+" "+ LastName;
+            }
+        }
+        
+   
+
+        public string FullAddress
+        {
+            get
+            {
+                return Address+ "," + City + "," + Region + "," + Country;
+          }
+        }
         public string GetDetail()
         {
-            return  $"{TitleOfCourtesy} { FristName} {LastName} {Title} {BirthDate} {Address},{City},{Region},{Country} {HomePhone}" ;
+            return  $"{FullName} {"    "} {Title} {"    "}   {BirthDate}  {"    "}  {FullAddress}{"    "}   {HomePhone}" ;
         }
 
 
