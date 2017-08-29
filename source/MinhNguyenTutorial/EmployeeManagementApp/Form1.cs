@@ -11,6 +11,8 @@ namespace EmployeeManagementApp
         {
             InitializeComponent();
             grdEmployee.AutoGenerateColumns = false;
+            var employees = GetEmployees();
+            grdEmployee.DataSource = employees;
         }
 
         private List<Employee> GetEmployees()
@@ -38,12 +40,30 @@ namespace EmployeeManagementApp
             var employees = new List<Employee> { employee1, employee2, employee3, employee4, employee5, employee6, employee7, employee8, employee9 };
 
             return employees;
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var employees = GetEmployees();
-            grdEmployee.DataSource = employees;
+            string searchValue = txtsearch.Text;
+         grdEmployee.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in grdEmployee.Rows)
+                {
+                    if (row.Cells[4].Value.ToString().Equals(searchValue))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("input error");
+            }
+
+
         }
     }
 }

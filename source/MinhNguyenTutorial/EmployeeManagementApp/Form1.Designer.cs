@@ -31,9 +31,11 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.grdEmployee = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmployee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,10 +58,12 @@
             this.grdEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FullName,
-            this.Title});
-            this.grdEmployee.Location = new System.Drawing.Point(12, 128);
+            this.Title,
+            this.BirthDate,
+            this.FullAddress});
+            this.grdEmployee.Location = new System.Drawing.Point(21, 128);
             this.grdEmployee.Name = "grdEmployee";
-            this.grdEmployee.Size = new System.Drawing.Size(813, 429);
+            this.grdEmployee.Size = new System.Drawing.Size(794, 429);
             this.grdEmployee.TabIndex = 1;
             // 
             // btnSearch
@@ -73,12 +77,19 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(376, 85);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(290, 20);
+            this.txtsearch.TabIndex = 3;
+            // 
             // FullName
             // 
             this.FullName.DataPropertyName = "FullName";
             this.FullName.HeaderText = "Full Name";
             this.FullName.Name = "FullName";
-            this.FullName.Width = 250;
+            this.FullName.Width = 150;
             // 
             // Title
             // 
@@ -86,19 +97,26 @@
             this.Title.HeaderText = "Title";
             this.Title.Name = "Title";
             // 
-            // textBox1
+            // BirthDate
             // 
-            this.textBox1.Location = new System.Drawing.Point(376, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(290, 20);
-            this.textBox1.TabIndex = 3;
+            this.BirthDate.DataPropertyName = "BirthDate";
+            this.BirthDate.HeaderText = "Birth Date";
+            this.BirthDate.Name = "BirthDate";
+            this.BirthDate.Width = 150;
+            // 
+            // FullAddress
+            // 
+            this.FullAddress.DataPropertyName = "FullAddress";
+            this.FullAddress.HeaderText = "Full Address";
+            this.FullAddress.Name = "FullAddress";
+            this.FullAddress.Width = 350;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 569);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.grdEmployee);
             this.Controls.Add(this.lblTitle);
@@ -115,9 +133,11 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridView grdEmployee;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BirthDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullAddress;
     }
 }
 
