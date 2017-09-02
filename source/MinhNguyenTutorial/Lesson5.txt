@@ -1,0 +1,16 @@
+
+4.Other Links:
+https://stackoverflow.com/questions/31859016/is-the-use-of-dynamic-considered-a-bad-practice
+http://www.dotnettricks.com/learn/csharp/difference-between-constant-and-readonly-and-static
+http://www.c-sharpcorner.com/UploadFile/c210df/difference-between-const-readonly-and-static-readonly-in-C-Sharp/
+http://geekswithblogs.net/BlackRabbitCoder/archive/2010/07/29/c-fundamentals-the-differences-between-struct-and-class.aspx
+https://www.codeproject.com/Articles/1456/Enums-and-Structs-in-C
+
+3. Extension methods:
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods
+Feature and Property of Extension Methods 
+-It is a static method.
+- It must be located in a static class.
+- It uses the "this" keyword as the first parameter with a type in .NET and this method will be called by a given type instance on the client side.
+- It also shown by VS intellisense. When we press the dot (.) after a type instance, then it comes in VS intellisense.
+
