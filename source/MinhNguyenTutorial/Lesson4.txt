@@ -1,32 +1,5 @@
-
-1.Anonymous Types
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/anonymous-types
-2. Boxing vs Unboxing vs Casting
-http://www.dotnettricks.com/learn/csharp/understanding-boxing-and-unboxing-in-csharp
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators
-
-Unboxing is converting a value type to a reference type. Casting is converting a reference type to a reference type or a value type as another value type.
-int i = 0;
-object o = (object)i; //this is boxing
-int i2 = (int)o; //this is unboxing.
-long l = (long)i; //this is casting.
-
-3. C# version vs .Net version
-C# Version: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/
-What's New in C# 6: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-6
-What's New in C# 7: https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7
-C# version vs .Net version:
-http://dotnetpattern.com/csharp-versions-features(***)
-http://www.tutorialsteacher.com/csharp/csharp-version-history
-- Auto property
-- Expression-Bodied
-
-4. Debug Mode vs Release Mode
-https://stackoverflow.com/questions/5338733/what-is-the-difference-between-debug-mode-and-release-mode-in-visual-studio-2010
-https://stackoverflow.com/questions/2446027/debug-vs-release-performance
-https://stackoverflow.com/questions/4043934/deploying-app-to-production-using-debug-mode-rather-than-release-mode
-
-5. Constant, static, read-only
-http://www.dotnettricks.com/learn/csharp/difference-between-constant-and-readonly-and-static
-
+- Homework: implement search
+- Linq to Objects (continue)
++ Method call
++ Query expression
+- Export txt, csv
