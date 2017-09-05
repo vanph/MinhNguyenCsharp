@@ -1,6 +1,6 @@
 1. Export filterd data
 - If there is no data => show message: No data found.
 2. Suggest user directory to store the exporting file.
-(OpenFileDialog)
+(SaveFileDialog)
 3. Read more info csv file (10 minutes)
 4. Clone EmployeeManagementApp to new App (optional)

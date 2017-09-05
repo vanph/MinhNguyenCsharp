@@ -12,7 +12,7 @@ namespace EmployeeManagementApp
     public partial class Form1 : Form
     {
         private readonly EmployeeRepository _employeeRepository;//Field
-                        
+
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace EmployeeManagementApp
 
                 foreach (var emp in allEmployees)
                 {
-                    if(emp.FullName.ToLower().Contains(searchValue) || emp.FullAddress.ToLower().Contains(searchValue))
+                    if (emp.FullName.ToLower().Contains(searchValue) || emp.FullAddress.ToLower().Contains(searchValue))
                     {
                         filterdEmps.Add(emp);
                     }
@@ -53,21 +53,21 @@ namespace EmployeeManagementApp
                 grdEmployee.DataSource = allEmployees;
             }
             var filteredEmployees = new List<Employee>();
-          
+
         }
 
         private void SearchByUsingLinqQueryExpressionStyle()
         {
             string searchValue = txtsearch.Text;
             var allEmployees = _employeeRepository.GetEmployees();
-            
+
             if (!string.IsNullOrEmpty(searchValue))
             {
                 searchValue = searchValue.ToLower();
                 var filteredEmployees = from e in allEmployees
                                         where e.FullName.ToLower().Contains(searchValue) || e.FullAddress.ToLower().Contains(searchValue)
                                         orderby e.BirthDate descending
-                                        select e;            
+                                        select e;
 
                 grdEmployee.DataSource = filteredEmployees.ToList();
             }
@@ -97,8 +97,8 @@ namespace EmployeeManagementApp
 
         private void OnFormLoaded(object sender, EventArgs e)
         {
-           //var employees= _employeeRepository.GetEmployees();
-           // grdEmployee.DataSource = employees;
+            //var employees= _employeeRepository.GetEmployees();
+            // grdEmployee.DataSource = employees;
         }
 
         private void btnExportToTxt_Click(object sender, EventArgs e)
@@ -108,58 +108,28 @@ namespace EmployeeManagementApp
 
         private void ExportToText1()
         {
-            Stream myStream = null;
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            openFileDialog1.InitialDirectory = "D:\\";
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
-             if(openFileDialog1.ShowDialog() == DialogResult.OK)
-          {
-                try
-                {
-                if ((myStream = openFileDialog1.OpenFile()) != null)
-                {
-                    using (myStream)
-                    {
-                                try
-                            {
-                                var allEmployees = _employeeRepository.GetEmployees();
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
 
-                                StringBuilder str = new StringBuilder();
-
-                                foreach (var emp in allEmployees)
-                                {
-                                    str.AppendLine($"Full Name: {emp.FullName} - Title: {emp.Title} - Full Address: {emp.FullAddress}");
-                                }
-
-                                var path = $"{Directory.GetCurrentDirectory()}\\.txt";
-
-                                File.WriteAllText(path, str.ToString());
-
-                                MessageBox.Show("Successfully exported");
-                            }
-                            catch
-                            {
-                                MessageBox.Show("No data found.");
-                            }
-                        }
-                }
-                    }
-            catch (Exception ex)
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
-               }
-        }
-         
+                var allEmployees = _employeeRepository.GetEmployees();
 
-    
+                StringBuilder str = new StringBuilder();
+
+                foreach (var emp in allEmployees)
+                {
+                    str.AppendLine($"Full Name: {emp.FullName} - Title: {emp.Title} - Full Address: {emp.FullAddress}");
+                }
+
+                File.WriteAllText(saveFileDialog1.FileName, str.ToString());
             }
+        }
 
         private void btnExportToCsv_Click(object sender, EventArgs e)
         {
-            try
+            saveFileDialog1.Filter = "csv files (*.csv)|*.csv";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var allEmployees = _employeeRepository.GetEmployees();
 
@@ -170,18 +140,9 @@ namespace EmployeeManagementApp
                     str.AppendLine($"{emp.FullName};{emp.Title};{emp.FullAddress}");
                 }
 
-                var path = $"{Directory.GetCurrentDirectory()}\\emp.csv";
-
-                File.WriteAllText(path, str.ToString());
-
                 MessageBox.Show("Successfully exported");
-            }
-            catch
-            {
-                MessageBox.Show("No data found.");
-            }
 
-           
+            }
         }
     }
 }

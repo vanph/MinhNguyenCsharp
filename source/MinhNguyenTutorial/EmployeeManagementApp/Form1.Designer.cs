@@ -38,6 +38,7 @@
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.btnExportToTxt = new System.Windows.Forms.Button();
             this.btnExportToCsv = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmployee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,6 +167,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FullAddress;
         private System.Windows.Forms.Button btnExportToTxt;
         private System.Windows.Forms.Button btnExportToCsv;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
