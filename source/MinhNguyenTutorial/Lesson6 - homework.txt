@@ -1,0 +1,5 @@
+Create my country app
+- design forms
+- implement search
+- show detail
+- implement Add, Edit, Delete
