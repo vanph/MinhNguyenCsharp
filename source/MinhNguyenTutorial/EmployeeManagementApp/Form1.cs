@@ -46,16 +46,13 @@ namespace EmployeeManagementApp
                         filterdEmps.Add(emp);
                     }
                 }
-
                 grdEmployee.DataSource = filterdEmps;
             }
             else
             {
                 grdEmployee.DataSource = allEmployees;
             }
-
             var filteredEmployees = new List<Employee>();
-
           
         }
 
@@ -111,38 +108,80 @@ namespace EmployeeManagementApp
 
         private void ExportToText1()
         {
-            var allEmployees = _employeeRepository.GetEmployees();
+            Stream myStream = null;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            StringBuilder str = new StringBuilder();
+            openFileDialog1.InitialDirectory = "D:\\";
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+             if(openFileDialog1.ShowDialog() == DialogResult.OK)
+          {
+                try
+                {
+                if ((myStream = openFileDialog1.OpenFile()) != null)
+                {
+                    using (myStream)
+                    {
+                                try
+                            {
+                                var allEmployees = _employeeRepository.GetEmployees();
 
-            foreach (var emp in allEmployees)
+                                StringBuilder str = new StringBuilder();
+
+                                foreach (var emp in allEmployees)
+                                {
+                                    str.AppendLine($"Full Name: {emp.FullName} - Title: {emp.Title} - Full Address: {emp.FullAddress}");
+                                }
+
+                                var path = $"{Directory.GetCurrentDirectory()}\\.txt";
+
+                                File.WriteAllText(path, str.ToString());
+
+                                MessageBox.Show("Successfully exported");
+                            }
+                            catch
+                            {
+                                MessageBox.Show("No data found.");
+                            }
+                        }
+                }
+                    }
+            catch (Exception ex)
             {
-                str.AppendLine($"Full Name: {emp.FullName} - Title: {emp.Title} - Full Address: {emp.FullAddress}");
-            }                        
-            
-            var path = $"{Directory.GetCurrentDirectory()}\\emp.txt";
-
-            File.WriteAllText(path, str.ToString());
-
-            MessageBox.Show("Successfully exported");
+                MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+               }
         }
+         
+
+    
+            }
 
         private void btnExportToCsv_Click(object sender, EventArgs e)
         {
-            var allEmployees = _employeeRepository.GetEmployees();
-
-            StringBuilder str = new StringBuilder();
-
-            foreach (var emp in allEmployees)
+            try
             {
-                str.AppendLine($"{emp.FullName};{emp.Title};{emp.FullAddress}");
+                var allEmployees = _employeeRepository.GetEmployees();
+
+                StringBuilder str = new StringBuilder();
+
+                foreach (var emp in allEmployees)
+                {
+                    str.AppendLine($"{emp.FullName};{emp.Title};{emp.FullAddress}");
+                }
+
+                var path = $"{Directory.GetCurrentDirectory()}\\emp.csv";
+
+                File.WriteAllText(path, str.ToString());
+
+                MessageBox.Show("Successfully exported");
+            }
+            catch
+            {
+                MessageBox.Show("No data found.");
             }
 
-            var path = $"{Directory.GetCurrentDirectory()}\\emp.csv";
-
-            File.WriteAllText(path, str.ToString());
-
-            MessageBox.Show("Successfully exported");
+           
         }
     }
 }
