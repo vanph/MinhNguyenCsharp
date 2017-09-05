@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{13EFEBED-1DDF-4EDA-BE05-6904F09A74B7}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,6 +31,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice.Homeworks-lession2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementApp", "EmployeeManagementApp\EmployeeManagementApp.csproj", "{CBA8F49B-B6C4-4CA3-BDEA-9E1AAA837150}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinqToObject", "LinqToObject", "{3D4A62B7-DB70-46A4-94F2-6A92307FC2DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCountry", "MyCountry\MyCountry.csproj", "{FBDE9C23-5539-4EA0-A700-12C4DB948273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCountryApp", "MyCountryApp\MyCountryApp.csproj", "{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,9 +59,21 @@ Global
 		{CBA8F49B-B6C4-4CA3-BDEA-9E1AAA837150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBA8F49B-B6C4-4CA3-BDEA-9E1AAA837150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBA8F49B-B6C4-4CA3-BDEA-9E1AAA837150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBDE9C23-5539-4EA0-A700-12C4DB948273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBDE9C23-5539-4EA0-A700-12C4DB948273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBDE9C23-5539-4EA0-A700-12C4DB948273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBDE9C23-5539-4EA0-A700-12C4DB948273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBDE9C23-5539-4EA0-A700-12C4DB948273} = {3D4A62B7-DB70-46A4-94F2-6A92307FC2DD}
+		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15} = {3D4A62B7-DB70-46A4-94F2-6A92307FC2DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAA1C40F-BE42-4C25-9374-F0134028D4FE}
