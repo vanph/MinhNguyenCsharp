@@ -100,6 +100,11 @@ namespace MyCountryApp
                 }
             }
         }
-        
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var frmDetail = new DistrictDetailForm { IsAddNew = true };
+            frmDetail.ShowDialog();
+        }
     }
 }
