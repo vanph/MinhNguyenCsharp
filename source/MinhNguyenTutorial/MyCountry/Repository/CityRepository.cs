@@ -1,13 +1,33 @@
 ﻿using System.Collections.Generic;
 using MyCountry.Model;
+using System.Linq;
 
 namespace MyCountry.Repository
 {
     public class CityRepository
     {
+        private List<City> _cites;
+
+        public CityRepository()
+        {
+            InitData();
+        }
+
         public List<City> GetAll()
         {
-            return new List<City>
+            return _cites;
+        }
+
+
+        public City GetByCode(string code)
+        {
+            return _cites.FirstOrDefault(x => x.Code == code);
+        }
+
+
+        private void InitData()
+        {
+            _cites = new List<City>
            {
                 new City("01", "Thành phố Hà Nội", "Thành phố Trung ương"),
                 new City("02", "Tỉnh Hà Giang", "Tỉnh"),

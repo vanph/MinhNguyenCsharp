@@ -103,7 +103,7 @@ namespace MyCountryApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var frmDetail = new DistrictDetailForm { IsAddNew = true };
+            var frmDetail = new DistrictDetailForm (_cityRepository, _districtRepository);
             frmDetail.Text = "Add new District";
             frmDetail.ShowDialog();
         
@@ -111,11 +111,40 @@ namespace MyCountryApp
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            var frmDetail = new DistrictDetailForm { IsEditNew = true };
-            frmDetail.Text = "Edit district ";
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var districtViewModel = dataGridView1.SelectedRows[0].DataBoundItem as DistrictViewModel;
+                if (districtViewModel != null)
+                {
+                    var frmDetail = new DistrictDetailForm(_cityRepository, _districtRepository,districtViewModel.DistrictCode);
+                    frmDetail.Text = "Edit district ";
+                    frmDetail.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a district to edit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             
-            frmDetail.ShowDialog();
-            
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var districtViewModel = dataGridView1.SelectedRows[0].DataBoundItem as DistrictViewModel;
+                if (districtViewModel != null)
+                {
+                    if( MessageBox.Show($"Do you really want to delete the district {districtViewModel.DistrictName}", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("deleted","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a district to delete","Warning", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

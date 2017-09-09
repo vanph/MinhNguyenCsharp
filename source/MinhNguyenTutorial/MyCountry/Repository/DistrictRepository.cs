@@ -6,10 +6,37 @@ using MyCountry.Model;
 namespace MyCountry.Repository
 {
     public class DistrictRepository
-    {        
+    {
+        private List<District> _districts;
+
+        public DistrictRepository()
+        {
+            InitData();
+        }
+
         public List<District> GetAll()
         {
-            return new List<District>
+            return _districts;
+        }
+
+        public District GetByCode(string code)
+        {
+            return _districts.FirstOrDefault(x=> x.Code == code);
+
+            //foreach (var district in _districts)
+            //{
+            //    if(district.Code == code)
+            //    {
+            //        return district;
+            //    }
+            //}
+
+            //return null;
+        }
+
+        private void InitData()
+        {
+            _districts =  new List<District>
             {
                 new District("001", "Quận Ba Đình", "Quận", "01"),
                 new District("002", "Quận Hoàn Kiếm", "Quận", "01"),
