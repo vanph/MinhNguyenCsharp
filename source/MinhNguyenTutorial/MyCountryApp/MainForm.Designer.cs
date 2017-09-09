@@ -44,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -239,16 +239,17 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btn_edit
+            // btnEdit
             // 
-            this.btn_edit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_edit.Location = new System.Drawing.Point(142, 16);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(90, 30);
-            this.btn_edit.TabIndex = 7;
-            this.btn_edit.Text = "Edit";
-            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(142, 16);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(90, 30);
+            this.btnEdit.TabIndex = 7;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btn_delete
             // 
@@ -263,7 +264,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btn_edit);
+            this.panel4.Controls.Add(this.btnEdit);
             this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.btn_delete);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -395,7 +396,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
