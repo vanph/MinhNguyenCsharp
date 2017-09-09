@@ -104,7 +104,18 @@ namespace MyCountryApp
         private void btnAdd_Click(object sender, EventArgs e)
         {
             var frmDetail = new DistrictDetailForm { IsAddNew = true };
+            frmDetail.Text = "Add new District";
             frmDetail.ShowDialog();
+        
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var frmDetail = new DistrictDetailForm { IsEditNew = true };
+            frmDetail.Text = "Edit district ";
+            
+            frmDetail.ShowDialog();
+            
         }
     }
 }
