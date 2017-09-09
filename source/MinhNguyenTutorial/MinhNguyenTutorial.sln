@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCountry", "MyCountry\MyCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCountryApp", "MyCountryApp\MyCountryApp.csproj", "{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{34EBB39F-E19B-40C8-9AD2-DB591EB2A884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagerApp", "CustomerManagerApp\CustomerManagerApp.csproj", "{BEC41FC1-7F78-4EC3-ACFE-FAA9CB31A1D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,10 @@ Global
 		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC41FC1-7F78-4EC3-ACFE-FAA9CB31A1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC41FC1-7F78-4EC3-ACFE-FAA9CB31A1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC41FC1-7F78-4EC3-ACFE-FAA9CB31A1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC41FC1-7F78-4EC3-ACFE-FAA9CB31A1D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +82,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FBDE9C23-5539-4EA0-A700-12C4DB948273} = {3D4A62B7-DB70-46A4-94F2-6A92307FC2DD}
 		{7EF3DB40-0C98-4665-8E00-9A1AC9701F15} = {3D4A62B7-DB70-46A4-94F2-6A92307FC2DD}
+		{BEC41FC1-7F78-4EC3-ACFE-FAA9CB31A1D7} = {34EBB39F-E19B-40C8-9AD2-DB591EB2A884}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FAA1C40F-BE42-4C25-9374-F0134028D4FE}

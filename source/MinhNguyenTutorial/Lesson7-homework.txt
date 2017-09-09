@@ -1,0 +1,2 @@
+1. Review MyCountrApp - LinqToObject version
+2. Entity framework - Implement search customers. Fields: CustomerID, CompanyName, ContactName. 
