@@ -66,7 +66,7 @@
             this.FullAddress});
             this.grdEmployee.Location = new System.Drawing.Point(21, 128);
             this.grdEmployee.Name = "grdEmployee";
-            this.grdEmployee.Size = new System.Drawing.Size(794, 429);
+            this.grdEmployee.Size = new System.Drawing.Size(801, 429);
             this.grdEmployee.TabIndex = 1;
             // 
             // FullName
@@ -99,7 +99,7 @@
             // btnSearch
             // 
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(686, 85);
+            this.btnSearch.Location = new System.Drawing.Point(693, 85);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(139, 37);
             this.btnSearch.TabIndex = 2;
@@ -110,7 +110,7 @@
             // txtsearch
             // 
             this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsearch.Location = new System.Drawing.Point(376, 85);
+            this.txtsearch.Location = new System.Drawing.Point(383, 85);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(290, 20);
             this.txtsearch.TabIndex = 3;
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 569);
+            this.ClientSize = new System.Drawing.Size(844, 569);
             this.Controls.Add(this.btnExportToCsv);
             this.Controls.Add(this.btnExportToTxt);
             this.Controls.Add(this.txtsearch);

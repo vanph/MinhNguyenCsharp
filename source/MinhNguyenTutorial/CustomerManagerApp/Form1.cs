@@ -16,15 +16,26 @@ namespace CustomerManagerApp
         public Form1()
         {
             InitializeComponent();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
         {
-            var dbContext = new NorthwindEnties();
-            var query = dbContext.Customers.OrderBy(x => x.CustomerID);
-
-            dataGridView1.DataSource = query.ToList();
+            //var dbContext = new NorthwindEnties();
+            //var query = dbContext.Customers.OrderBy(x => x.CustomerID);
+            //dataGridView1.DataSource = query.ToList();
 
         }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchvalue = txtSearch.Text;
+            var dbContext = new NorthwindEnties();
+            var customersQuery = dbContext.Customers.Where(x => x.CustomerID.Contains(searchvalue)|| x.CompanyName.Contains(searchvalue));
+            var customers = customersQuery.ToList();
+            dataGridView1.DataSource = customers.ToList();
+        }
+
+
     }
 }

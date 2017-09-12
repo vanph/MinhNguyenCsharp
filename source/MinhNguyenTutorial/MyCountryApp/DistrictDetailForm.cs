@@ -59,11 +59,9 @@ namespace MyCountryApp
             }
             else
             {              
-
                 txtCode.ReadOnly = true;
                 txtCode.Enabled = false;
                 cbbCity.Enabled = false;
-
                 var district = _districtRepository.GetByCode(_selectedDistrictCode);
                 if (district != null)
                 {
