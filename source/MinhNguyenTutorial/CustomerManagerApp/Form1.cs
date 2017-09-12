@@ -24,6 +24,7 @@ namespace CustomerManagerApp
             var query = dbContext.Customers.OrderBy(x => x.CustomerID);
 
             dataGridView1.DataSource = query.ToList();
+
         }
     }
 }
