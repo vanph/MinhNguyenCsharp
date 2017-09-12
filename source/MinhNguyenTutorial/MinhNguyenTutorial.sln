@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{13EFEBED-1DDF-4EDA-BE05-6904F09A74B7}"
 	ProjectSection(SolutionItems) = preProject
@@ -10,15 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{13EFEBED-1
 		Lesson2-homework.txt = Lesson2-homework.txt
 		Lesson2.txt = Lesson2.txt
 		Lesson3-homework.txt = Lesson3-homework.txt
-		Lesson3.txt = Lesson3.txt
 		Lesson4-homework.txt = Lesson4-homework.txt
-		Lesson4.txt = Lesson4.txt
 		Lesson5-homework.txt = Lesson5-homework.txt
 		Lesson5.txt = Lesson5.txt
 		Lesson6 - homework.txt = Lesson6 - homework.txt
 		Lesson6.txt = Lesson6.txt
 		Lesson7-homework.txt = Lesson7-homework.txt
-		Lesson7.txt = Lesson7.txt
 		Lesson8-homework.txt = Lesson8-homework.txt
 		Lesson8.txt = Lesson8.txt
 	EndProjectSection
