@@ -1,8 +1,10 @@
-using System.Data.Entity;
-using MyCountryApplication.DataAccess.Model;
-
-namespace MyCountryApplication.DataAccess.Persistence
+namespace MyCountry.DataAccess
 {
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
     public partial class MyCountryEntities : DbContext
     {
         public MyCountryEntities()

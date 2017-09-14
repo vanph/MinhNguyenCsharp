@@ -55,16 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\Model\City.cs" />
-    <Compile Include="DataAccess\Model\District.cs" />
-    <Compile Include="DataAccess\Persistence\MyCountryEntities.cs" />
+    <Compile Include="ViewModel\DistrictViewModel.cs" />
     <Compile Include="View\DistrictDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\DistrictDetailForm.Designer.cs">
       <DependentUpon>DistrictDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DistrictViewModel.cs" />
     <Compile Include="View\ListDistrictForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +70,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Business\MyCountryBusiness.cs" />
     <EmbeddedResource Include="View\DistrictDetailForm.resx">
       <DependentUpon>DistrictDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,7 +99,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MyCountry.DataAccess\MyCountry.DataAccess.csproj">
+      <Project>{d6903d52-3978-4746-8c50-2f242f48dd5f}</Project>
+      <Name>MyCountry.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

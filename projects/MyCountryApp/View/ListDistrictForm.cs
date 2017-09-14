@@ -1,37 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Windows.Forms;
-using MyCountryApplication.DataAccess.Model;
-using MyCountryApplication.DataAccess.Persistence;
+using MyCountry.DataAccess;
+using MyCountryApplication.Business;
+using MyCountryApplication.ViewModel;
 
 
 namespace MyCountryApplication.View
 {
     public partial class ListDistrictForm : Form
     {
+        private readonly MyCountryBusiness _myCountryBusiness;
+
         public ListDistrictForm()
         {
             InitializeComponent();
             grdDistrict.AutoGenerateColumns = false;
+            _myCountryBusiness = new MyCountryBusiness();
         }
+
+        
 
         private void btnSeach_Click(object sender, EventArgs e)
         {
-
-            //MyCountryEntities entity = new MyCountryEntities();
-            //var query = (from d in entity.Districts
-            //             where d.DistrictCode.Contains(searchValue) || d.Name.Contains(searchValue)
-            //             join c in entity.Cities on d.CityCode equals c.CityCode
-            //             select new DistrictViewModel
-            //             {
-            //                 DistrictCode = d.DistrictCode,
-            //                 DistrictName = d.Name,
-            //                 CityCode = c.CityCode,
-            //                 CityName = c.Name
-            //             }).ToList();
-            grdDistrict.DataSource = SearchDistricts(txtSearch.Text);
+            grdDistrict.DataSource = _myCountryBusiness.SearchDistricts(txtSearch.Text);
         }
 
 
@@ -42,33 +35,9 @@ namespace MyCountryApplication.View
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            var query = SearchDistricts("");
+            var query = _myCountryBusiness.SearchDistricts();
 
             grdDistrict.DataSource = query.ToList();
-        }
-
-        private static List<DistrictViewModel> SearchDistricts(string keyword)
-        {
-            var dbContext = new MyCountryEntities();
-
-            var query = (from d in dbContext.Districts
-                join c in dbContext.Cities on d.CityCode equals c.CityCode
-                select new DistrictViewModel
-                {
-                    DistrictCode = d.DistrictCode,
-                    DistrictName = d.Name,
-                    CityCode = c.CityCode,
-                    CityName = c.Name
-                });
-
-            if (!string.IsNullOrEmpty(keyword))
-            {
-                query = query.Where(d => d.DistrictCode.Contains(keyword) || d.DistrictName.Contains(keyword));
-            }
-
-            var result = query.ToList();
-
-            return result;
         }
 
         private void btnClearSearch_click(object sender, EventArgs e)
