@@ -30,7 +30,6 @@ namespace CustomerManagerApp
         private  IEnumerable<Customer> SearchCustomers(string searchvalue)
         {
             var dbContext = new NorthwindEnties();
-
             var query = dbContext.Customers.Where(x => x.CustomerID.Contains(searchvalue) || x.CompanyName.Contains(searchvalue));
             var customers = query.ToList();
 

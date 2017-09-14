@@ -64,6 +64,7 @@
     <Compile Include="View\DistrictDetailForm.Designer.cs">
       <DependentUpon>DistrictDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DistrictViewModel.cs" />
     <Compile Include="View\ListDistrictForm.cs">
       <SubType>Form</SubType>
     </Compile>
