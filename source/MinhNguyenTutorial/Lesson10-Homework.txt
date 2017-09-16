@@ -1,0 +1,3 @@
+- 2 Questions: ko dung If, Swap 2 so
+- Implement Add and Edit
+- Implment Export

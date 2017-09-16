@@ -1,12 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{13EFEBED-1DDF-4EDA-BE05-6904F09A74B7}"
 	ProjectSection(SolutionItems) = preProject
 		Lesson1-homework.txt = Lesson1-homework.txt
 		Lesson1.txt = Lesson1.txt
+		Lesson10-Homework.txt = Lesson10-Homework.txt
 		Lesson2-homework.txt = Lesson2-homework.txt
 		Lesson2.txt = Lesson2.txt
 		Lesson3-homework.txt = Lesson3-homework.txt
