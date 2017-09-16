@@ -7,7 +7,7 @@ namespace MyCountryApplication.Business
 {
     public class MyCountryBusiness
     {
-        public  List<DistrictViewModel> SearchDistricts(string keyword ="")
+        public  List<DistrictViewModel> SearchDistricts(string keyword ="",string cityCode="")
         {
             var dbContext = new MyCountryEntities();
 
@@ -26,10 +26,16 @@ namespace MyCountryApplication.Business
                 query = query.Where(d => d.DistrictCode.Contains(keyword) || d.DistrictName.Contains(keyword));
             }
 
-            var result = query.ToList();
+            if (!string.IsNullOrEmpty(cityCode))
+            {
+                query = query.Where(d => d.CityCode == cityCode);
+            }
+
+            var result = query.OrderBy(x=>x.DistrictCode).ToList();
 
             return result;
         }
+
         public  List<City> GetCities()
         {
             var dbContext = new MyCountryEntities();

@@ -19,12 +19,19 @@ namespace MyCountryApplication.View
             grdDistrict.AutoGenerateColumns = false;
             _myCountryBusiness = new MyCountryBusiness();
         }
-
         
 
         private void btnSeach_Click(object sender, EventArgs e)
         {
-            grdDistrict.DataSource = _myCountryBusiness.SearchDistricts(txtSearch.Text);
+            SearchDistrictInformations();
+        }
+
+        private void SearchDistrictInformations()
+        {
+            var keyword = txtSearch.Text;
+            var cityCode = cbbCity.SelectedValue != null ? cbbCity.SelectedValue.ToString() : string.Empty;
+
+            grdDistrict.DataSource = _myCountryBusiness.SearchDistricts(keyword, cityCode);
         }
 
 
@@ -35,17 +42,25 @@ namespace MyCountryApplication.View
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            LoadCities();
+
+            SearchDistrictInformations();
+        }
+
+        private void LoadCities()
+        {
             cbbCity.DataSource = _myCountryBusiness.GetCities();
             cbbCity.DisplayMember = nameof(City.Name);
+            cbbCity.ValueMember = nameof(City.CityCode);
             cbbCity.SelectedIndex = -1;
-
-            grdDistrict.DataSource = _myCountryBusiness.SearchDistricts();
         }
 
 
         private void btnClearSearch_click(object sender, EventArgs e)
         {
-
+            cbbCity.SelectedIndex = -1;
+            txtSearch.Text = "";
+            SearchDistrictInformations();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -74,6 +89,33 @@ namespace MyCountryApplication.View
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            if (grdDistrict.SelectedRows.Count > 0)
+            {
+                var districtViewModel = grdDistrict.SelectedRows[0].DataBoundItem as DistrictViewModel;
+                if (districtViewModel != null)
+                {
+                   var dialogResult = MessageBox.Show($@"Do you really want to delete the District {districtViewModel.DistrictName}?",@"Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        var dbContext = new MyCountryEntities();
+                        var distristCode = districtViewModel.DistrictCode;
+                        var district = dbContext.Districts.FirstOrDefault(x => x.DistrictCode == distristCode);
+
+                        if (district != null)
+                        {
+                            dbContext.Districts.Remove(district);
+                            dbContext.SaveChanges();
+                            SearchDistrictInformations();
+
+                            MessageBox.Show(@"Successfully deleted the district.", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Please select a district to delete", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
     }
