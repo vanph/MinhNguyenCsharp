@@ -30,5 +30,12 @@ namespace MyCountryApplication.Business
 
             return result;
         }
+        public  List<City> GetCities()
+        {
+            var dbContext = new MyCountryEntities();
+            var cities = dbContext.Cities.ToList();
+
+            return cities;
+        }
     }
 }

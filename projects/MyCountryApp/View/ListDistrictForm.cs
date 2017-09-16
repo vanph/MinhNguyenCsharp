@@ -35,10 +35,13 @@ namespace MyCountryApplication.View
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            var query = _myCountryBusiness.SearchDistricts();
+            cbbCity.DataSource = _myCountryBusiness.GetCities();
+            cbbCity.DisplayMember = nameof(City.Name);
+            cbbCity.SelectedIndex = -1;
 
-            grdDistrict.DataSource = query.ToList();
+            grdDistrict.DataSource = _myCountryBusiness.SearchDistricts();
         }
+
 
         private void btnClearSearch_click(object sender, EventArgs e)
         {

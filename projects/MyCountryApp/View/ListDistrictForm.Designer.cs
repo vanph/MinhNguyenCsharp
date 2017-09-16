@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.grdDistrict = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClearSearch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.cbbSearch = new System.Windows.Forms.ComboBox();
+            this.cbbCity = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,9 +55,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdDistrict)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,6 +82,28 @@
             this.grdDistrict.TabIndex = 0;
             this.grdDistrict.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column1.DataPropertyName = "DistrictCode";
+            this.Column1.HeaderText = "District Code";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 92;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.DataPropertyName = "DistrictName";
+            this.Column2.HeaderText = "District Name";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.DataPropertyName = "CityName";
+            this.Column3.HeaderText = "City Name";
+            this.Column3.Name = "Column3";
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -107,7 +129,7 @@
             // 
             this.panel2.Controls.Add(this.btnClearSearch);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.cbbSearch);
+            this.panel2.Controls.Add(this.cbbCity);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -141,16 +163,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnSeach_Click);
             // 
-            // cbbSearch
+            // cbbCity
             // 
-            this.cbbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbbCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbbSearch.FormattingEnabled = true;
-            this.cbbSearch.Location = new System.Drawing.Point(322, 25);
-            this.cbbSearch.Name = "cbbSearch";
-            this.cbbSearch.Size = new System.Drawing.Size(166, 21);
-            this.cbbSearch.TabIndex = 2;
-            this.cbbSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbbCity.FormattingEnabled = true;
+            this.cbbCity.Location = new System.Drawing.Point(322, 25);
+            this.cbbCity.Name = "cbbCity";
+            this.cbbCity.Size = new System.Drawing.Size(166, 21);
+            this.cbbCity.TabIndex = 2;
+            this.cbbCity.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtSearch
             // 
@@ -333,28 +355,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "District Code :";
             // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.DataPropertyName = "DistrictCode";
-            this.Column1.HeaderText = "District Code";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 92;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "DistrictName";
-            this.Column2.HeaderText = "District Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "CityName";
-            this.Column3.HeaderText = "City Name";
-            this.Column3.Name = "Column3";
-            // 
             // ListDistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,7 +402,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbbSearch;
+        private System.Windows.Forms.ComboBox cbbCity;
         private System.Windows.Forms.Label lblCityName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDistrictCode;
