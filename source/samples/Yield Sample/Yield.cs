@@ -15,22 +15,34 @@ namespace Yield
         public static class NumberList
         {
             // Create an array of integers.
-            public static int[] ints = { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377 };
+            public static int[] Ints = { 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377 };
 
             // Define a property that returns only the even numbers.
             public static IEnumerable<int> GetEven()
             {
                 // Use yield to return the even numbers in the list.
-                foreach (int i in ints)
+                foreach (int i in Ints)
                     if (i % 2 == 0)
                         yield return i;
+
+                //var result = new List<int>();
+
+                //foreach (var i in Ints)
+                //{
+                //    if (i % 2 == 0)
+                //    {
+                //        result.Add(i);
+                //    }
+                //}
+
+                //return  result;
             }
 
             // Define a property that returns only the even numbers.
             public static IEnumerable<int> GetOdd()
             {
                 // Use yield to return only the odd numbers.
-                foreach (int i in ints)
+                foreach (int i in Ints)
                     if (i % 2 == 1)
                         yield return i;
             }
@@ -39,7 +51,7 @@ namespace Yield
             public static IEnumerable<int> GetUnreasonable()
             {
                 // Use yield to return only the odd numbers.
-                foreach (int i in ints)
+                foreach (int i in Ints)
                     if (i % int.MaxValue == 0)
                         yield return i;
             }
@@ -53,16 +65,16 @@ namespace Yield
             foreach (int i in NumberList.GetEven())
                 Console.WriteLine(i);
 
-            // Display the odd numbers.
-            Console.WriteLine("Odd numbers");
-            foreach (int i in NumberList.GetOdd())
-                Console.WriteLine(i);
+            //// Display the odd numbers.
+            //Console.WriteLine("Odd numbers");
+            //foreach (int i in NumberList.GetOdd())
+            //    Console.WriteLine(i);
 
-            // Display the odd numbers.
-            Console.WriteLine("Unreasonable numbers");
-            var unreasonableNumbers = NumberList.GetUnreasonable();
-            foreach (int i in unreasonableNumbers)
-                Console.WriteLine(i);
+            //// Display the odd numbers.
+            //Console.WriteLine("Unreasonable numbers");
+            //var unreasonableNumbers = NumberList.GetUnreasonable();
+            //foreach (int i in unreasonableNumbers)
+            //    Console.WriteLine(i);
 
             Console.ReadLine();
         }

@@ -7,5 +7,6 @@ namespace MyCountryApplication.ViewModel
         public string CityCode { get; set; }
         public string DistrictName { get; internal set; }
         public string CityName { get; internal set; }
+        public string Type { get; set; }
     }
 }

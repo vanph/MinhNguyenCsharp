@@ -18,6 +18,9 @@ namespace MyCountryApplication.View
             InitializeComponent();
             grdDistrict.AutoGenerateColumns = false;
             _myCountryBusiness = new MyCountryBusiness();
+
+            cbbCity.DisplayMember = nameof(City.Name);
+            cbbCity.ValueMember = nameof(City.CityCode);
         }
         
 
@@ -29,7 +32,8 @@ namespace MyCountryApplication.View
         private void SearchDistrictInformations()
         {
             var keyword = txtSearch.Text;
-            var cityCode = cbbCity.SelectedValue != null ? cbbCity.SelectedValue.ToString() : string.Empty;
+            var city = cbbCity.SelectedItem as City;
+            var cityCode = city != null ? city.CityCode : string.Empty;
 
             grdDistrict.DataSource = _myCountryBusiness.SearchDistricts(keyword, cityCode);
         }
@@ -50,8 +54,6 @@ namespace MyCountryApplication.View
         private void LoadCities()
         {
             cbbCity.DataSource = _myCountryBusiness.GetCities();
-            cbbCity.DisplayMember = nameof(City.Name);
-            cbbCity.ValueMember = nameof(City.CityCode);
             cbbCity.SelectedIndex = -1;
         }
 
@@ -79,6 +81,15 @@ namespace MyCountryApplication.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            var frmDetail = new DistrictDetailForm {Text = @"Add new District"};
+
+            var dialogResult = frmDetail.ShowDialog();
+            if (dialogResult == DialogResult.Yes)
+            {
+                //Todo: show success message
+
+                SearchDistrictInformations();
+            }
 
         }
 
