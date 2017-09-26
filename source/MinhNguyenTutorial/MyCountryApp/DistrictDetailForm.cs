@@ -59,7 +59,7 @@ namespace MyCountryApp
             }
             else
             {              
-                txtCode.ReadOnly = true;
+              
                 txtCode.Enabled = false;
                 cbbCity.Enabled = false;
                 var district = _districtRepository.GetByCode(_selectedDistrictCode);
@@ -71,6 +71,11 @@ namespace MyCountryApp
                     LoadCities(district.CityCode);
                 }              
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
