@@ -12,7 +12,7 @@ namespace MyCountryApplication.Business
     {
         public List<DistrictViewModel> SearchDistricts(string keyword ="",string cityCode="")
         {
-            var dbContext= new MyCountryEntities();
+            var dbContext = new MyCountryEntities();
             var query = (from d in dbContext.Districts
                 join c in dbContext.Cities on d.CityCode equals c.CityCode
                 select new DistrictViewModel()
@@ -20,7 +20,7 @@ namespace MyCountryApplication.Business
                     DistrictCode = d.DistrictCode,
                     DistrictName = d.Name,
                     CityCode = c.CityCode,
-                   CityName= c.Name
+                    CityName = c.Name
                 });
             if (!string.IsNullOrEmpty(keyword))
             {
@@ -28,10 +28,12 @@ namespace MyCountryApplication.Business
             }
             if (!string.IsNullOrEmpty(cityCode))
             {
-                query = query.Where(c=>c.CityCode==cityCode);
+                query = query.Where(c => c.CityCode == cityCode);
             }
-            var result = query.OrderBy(x=>x.DistrictCode).ToList();
+            var result = query.OrderBy(x => x.DistrictCode).ToList();
             return result;
+
+
 
         }
 

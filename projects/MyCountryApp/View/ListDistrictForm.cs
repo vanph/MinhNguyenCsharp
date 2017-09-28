@@ -4,6 +4,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Windows.Forms;
 using MyCountry.DataAccess;
+using MyCountry.DataAccess.Model;
 using MyCountryApplication.Business;
 using MyCountryApplication.ViewModel;
 
@@ -47,6 +48,12 @@ namespace MyCountryApplication.View
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadCities();
+            panel1.Hide();
+            panel2.Hide();
+            panel3.Hide();
+            panel4.Hide();
+            panel5.Hide();
+
 
         }
 
@@ -144,6 +151,35 @@ namespace MyCountryApplication.View
             }
 
 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmAbout = new AboutForm();
+            frmAbout.ShowDialog();
+        }
+
+     
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            var frmLogin = new LoginForm();
+            var dialogResult = frmLogin.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                panel1.Show();
+                panel2.Show();
+                panel3.Show();
+                panel4.Show();
+                panel5.Show();
+                label8.Text = $@"Hi,minh";
+            }
+         
         }
     }
 }

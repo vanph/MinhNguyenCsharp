@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MyCountryApplication.Business;
 using MyCountry.DataAccess;
+using MyCountry.DataAccess.Model;
 
 namespace MyCountryApplication.View
 {
@@ -104,45 +105,7 @@ namespace MyCountryApplication.View
             {
                 MessageBox.Show(exception.Message);
             }
-            try
-            {
-                if (_isAddNew)
-                {
-       
-                    var dbContext = new MyCountryEntities();
-                    var city = cbbCity.SelectedItem as City;
-
-                    var district = new District
-                    {
-                        Name = txtName.Text,
-                        DistrictCode = txtCode.Text,
-                        Type = txtType.Text,
-                        CityCode = city != null ? city.CityCode : string.Empty
-                    };
-                    dbContext.Districts.Add(district);
-                    dbContext.SaveChanges();
-                }
-                else
-                {
-              
-
-                    var dbContext = new MyCountryEntities();
-                    var district = dbContext.Districts.FirstOrDefault(x => x.DistrictCode == _selectedCode);
-                    if (district != null)
-                    {
-                        district.Name = txtName.Text;
-                        district.Type = txtType.Text;
-
-                        dbContext.SaveChanges();
-                    }
-                }
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
+   
         }
 
 

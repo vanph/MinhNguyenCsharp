@@ -89,27 +89,21 @@ namespace MyCountryApplication.View
                 MessageBox.Show(@"Successfully added district", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SearchDistrictInformations();
             }
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (grdDistrict.SelectedRows.Count > 0)
+            var districtViewModel = grdDistrict.SelectedRows[0].DataBoundItem as DistrictViewModel;
+            if (districtViewModel != null)
             {
-                var districtViewModel = grdDistrict.SelectedRows[0].DataBoundItem as DistrictViewModel;
-                if (districtViewModel != null)
+                var frmDetail = new DistrictDetailForm(false, districtViewModel.DistrictCode);
+                var dialogResult = frmDetail.ShowDialog();
+                if (dialogResult == DialogResult.OK)
                 {
-                    var frmDetail = new DistrictDetailForm(false,districtViewModel.DistrictCode);
-                    var dialogResult = frmDetail.ShowDialog();
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        MessageBox.Show(@"Successfully edited the district", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        SearchDistrictInformations();
-                    }
+                    MessageBox.Show(@"Successfully edited the district", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SearchDistrictInformations();
                 }
-            }
-            else
-            {
-                MessageBox.Show(@"Please select a district to edit", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

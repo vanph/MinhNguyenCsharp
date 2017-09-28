@@ -5,6 +5,7 @@ using MyCountryApplication.ViewModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Xml.Schema;
+using MyCountry.DataAccess.Model;
 
 namespace MyCountryApplication.Business
 {

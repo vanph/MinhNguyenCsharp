@@ -19,11 +19,8 @@ namespace MyCountryApplication.View
             if (!isAddNew)
             {
                 _selectedCode = code;
-
             }
-
             Text = _isAddNew ? @"Add new District" : @"Edit District";
-
             _myCountryBusiness = new MyCountryBusiness();
 
         }
@@ -35,7 +32,7 @@ namespace MyCountryApplication.View
 
         private void DistrictDetailForm_Load(object sender, EventArgs e)
         {
-            var cities = _myCountryBusiness.GetCities();
+            var cities = new MyCountryEntities();
             cbbCity.DataSource = cities;
             cbbCity.DisplayMember = nameof(City.Name);
             if (!_isAddNew)
@@ -49,7 +46,7 @@ namespace MyCountryApplication.View
                     txtName.Text = editingDistrict.Name;
                     txtCode.Text = editingDistrict.DistrictCode;
                     txtType.Text = editingDistrict.Type;
-                    var city = cities.FirstOrDefault(x => x.CityCode == editingDistrict.CityCode);
+                    var city = cities.Districts.FirstOrDefault(x => x.CityCode == editingDistrict.CityCode);
                     cbbCity.SelectedItem = city;
                 }
                 else
@@ -58,7 +55,7 @@ namespace MyCountryApplication.View
                     btnSave.Enabled = false;
                 }
             }
-          
+
 
 
         }
@@ -69,7 +66,6 @@ namespace MyCountryApplication.View
             {
                 if (_isAddNew)
                 {
-                    //Todo: check existing district code
                     var dbContext = new MyCountryEntities();
                     var city = cbbCity.SelectedItem as City;
 
@@ -97,52 +93,13 @@ namespace MyCountryApplication.View
                         dbContext.SaveChanges();
                     }
                 }
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-            try
-            {
-                if (_isAddNew)
-                {
-       
-                    var dbContext = new MyCountryEntities();
-                    var city = cbbCity.SelectedItem as City;
 
-                    var district = new District
-                    {
-                        Name = txtName.Text,
-                        DistrictCode = txtCode.Text,
-                        Type = txtType.Text,
-                        CityCode = city != null ? city.CityCode : string.Empty
-                    };
-                    dbContext.Districts.Add(district);
-                    dbContext.SaveChanges();
-                }
-                else
-                {
-              
-
-                    var dbContext = new MyCountryEntities();
-                    var district = dbContext.Districts.FirstOrDefault(x => x.DistrictCode == _selectedCode);
-                    if (district != null)
-                    {
-                        district.Name = txtName.Text;
-                        district.Type = txtType.Text;
-
-                        dbContext.SaveChanges();
-                    }
-                }
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-            }
         }
 
 
