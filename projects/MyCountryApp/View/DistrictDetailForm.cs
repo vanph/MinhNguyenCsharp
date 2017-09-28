@@ -79,7 +79,11 @@ namespace MyCountryApplication.View
                         Name = txtName.Text,
                         DistrictCode = txtCode.Text,
                         Type = txtType.Text,
-                        CityCode = city != null ? city.CityCode : string.Empty
+                        CityCode = city != null ? city.CityCode : string.Empty,
+                        CreatedDate = DateTime.Now,
+                        CreatedBy = "minh",
+                        ModifiedDate = DateTime.Now,
+                        ModifiedBy = "minh"
                     };
                     dbContext.Districts.Add(district);
                     dbContext.SaveChanges();
@@ -94,7 +98,8 @@ namespace MyCountryApplication.View
                     {
                         district.Name = txtName.Text;
                         district.Type = txtType.Text;
-
+                        district.ModifiedDate = DateTime.Now;
+                        district.ModifiedBy = "minh";
                         dbContext.SaveChanges();
                     }
                 }
