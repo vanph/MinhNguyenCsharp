@@ -205,6 +205,7 @@
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -218,6 +219,7 @@
             this.cityToolStripMenuItem.Name = "cityToolStripMenuItem";
             this.cityToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.cityToolStripMenuItem.Text = "City";
+            this.cityToolStripMenuItem.Click += new System.EventHandler(this.cityToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 

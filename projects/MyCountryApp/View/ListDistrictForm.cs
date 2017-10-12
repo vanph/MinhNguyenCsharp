@@ -105,7 +105,7 @@ namespace MyCountryApplication.View
                 var districtViewModel = grdDistrict.SelectedRows[0].DataBoundItem as DistrictViewModel;
                 if (districtViewModel != null)
                 {
-                    var frmDetail = new DistrictDetailForm(false,districtViewModel.DistrictCode);
+                    var frmDetail = new DistrictDetailForm(false, districtViewModel.DistrictCode);
                     var dialogResult = frmDetail.ShowDialog();
                     if (dialogResult == DialogResult.OK)
                     {
@@ -164,7 +164,7 @@ namespace MyCountryApplication.View
             frmAbout.ShowDialog();
         }
 
-     
+
 
         private void label8_Click(object sender, EventArgs e)
         {
@@ -177,9 +177,20 @@ namespace MyCountryApplication.View
                 panel3.Show();
                 panel4.Show();
                 panel5.Show();
-                label8.Text = $@"Hi,minh";
+                label8.Text = $@"Hi {frmLogin.UserName}";
             }
-         
+
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var listCityForm =new ListCityForm();
+            listCityForm.ShowDialog();
         }
     }
 }

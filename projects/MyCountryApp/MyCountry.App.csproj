@@ -62,6 +62,12 @@
     <Compile Include="View\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ListCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ListCityForm.Designer.cs">
+      <DependentUpon>ListCityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\DistrictDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="View\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListCityForm.resx">
+      <DependentUpon>ListCityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DistrictDetailForm.resx">
       <DependentUpon>DistrictDetailForm.cs</DependentUpon>

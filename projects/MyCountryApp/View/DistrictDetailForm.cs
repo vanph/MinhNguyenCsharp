@@ -38,7 +38,7 @@ namespace MyCountryApplication.View
         {
             var cities = _myCountryBusiness.GetCities();
             cbbCity.DataSource = cities;
-            cbbCity.DisplayMember = nameof(City.Name);
+            cbbCity.DisplayMember = nameof(ListCityForm.Name);
             if (!_isAddNew)
             {
                 cbbCity.Enabled = false;
