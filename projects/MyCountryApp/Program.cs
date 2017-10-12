@@ -14,7 +14,7 @@ namespace MyCountryApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListDistrictForm());
+            Application.Run(new DistrictListForm());
         }
     }
 }

@@ -12,6 +12,7 @@ namespace MyCountry.DataAccess
         public MyCountryEntities()
             : base("name=MyCountryEntities")
         {
+            
         }
 
         public virtual DbSet<City> Cities { get; set; }
@@ -23,3 +24,4 @@ namespace MyCountry.DataAccess
         }
     }
 }
+

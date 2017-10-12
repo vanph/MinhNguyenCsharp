@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyCountryApplication.View
 {
-    public partial class ListCityForm : Form
+    public partial class CityListForm : Form
     {
-        public ListCityForm()
+        public CityListForm()
         {
             InitializeComponent();
         }

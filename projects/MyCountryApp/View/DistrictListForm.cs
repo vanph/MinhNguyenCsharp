@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Windows.Forms;
 using MyCountry.DataAccess;
@@ -11,11 +9,11 @@ using MyCountryApplication.ViewModel;
 
 namespace MyCountryApplication.View
 {
-    public partial class ListDistrictForm : Form
+    public partial class DistrictListForm : Form
     {
         private readonly MyCountryBusiness _myCountryBusiness;
 
-        public ListDistrictForm()
+        public DistrictListForm()
         {
             InitializeComponent();
             grdDistrict.AutoGenerateColumns = false;
@@ -172,15 +170,18 @@ namespace MyCountryApplication.View
             var dialogResult = frmLogin.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
+                ServiceContext.IsLogged = true;
+                ServiceContext.UserName = frmLogin.UserName;
                 panel1.Show();
                 panel2.Show();
                 panel3.Show();
                 panel4.Show();
                 panel5.Show();
-                label8.Text = $@"Hi {frmLogin.UserName}";
-            }
+                label8.Text = $@"Hi {ServiceContext.UserName}";
 
+            }
         }
+
 
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -189,7 +190,7 @@ namespace MyCountryApplication.View
 
         private void cityToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var listCityForm =new ListCityForm();
+            var listCityForm =new CityListForm();
             listCityForm.ShowDialog();
         }
     }

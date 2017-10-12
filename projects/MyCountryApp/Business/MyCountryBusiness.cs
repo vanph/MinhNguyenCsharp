@@ -50,6 +50,7 @@ namespace MyCountryApplication.Business
             var cities = dbContext.Cities.ToList();
             return cities;
         }
+        
     }
 
 }

@@ -38,7 +38,7 @@ namespace MyCountryApplication.View
         {
             var cities = _myCountryBusiness.GetCities();
             cbbCity.DataSource = cities;
-            cbbCity.DisplayMember = nameof(ListCityForm.Name);
+            cbbCity.DisplayMember = nameof(CityListForm.Name);
             if (!_isAddNew)
             {
                 cbbCity.Enabled = false;
@@ -81,9 +81,9 @@ namespace MyCountryApplication.View
                         Type = txtType.Text,
                         CityCode = city != null ? city.CityCode : string.Empty,
                         CreatedDate = DateTime.Now,
-                        CreatedBy = "minh",
+                        CreatedBy =ServiceContext.UserName,
                         ModifiedDate = DateTime.Now,
-                        ModifiedBy = "minh"
+                        ModifiedBy = ServiceContext.UserName
                     };
                     dbContext.Districts.Add(district);
                     dbContext.SaveChanges();
@@ -99,7 +99,7 @@ namespace MyCountryApplication.View
                         district.Name = txtName.Text;
                         district.Type = txtType.Text;
                         district.ModifiedDate = DateTime.Now;
-                        district.ModifiedBy = "minh";
+                        district.ModifiedBy = ServiceContext.UserName;
                         dbContext.SaveChanges();
                     }
                 }

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>packages\CsvHelper.3.2.0\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\ServiceContext.cs" />
     <Compile Include="ViewModel\DistrictViewModel.cs" />
     <Compile Include="View\AboutForm.cs">
       <SubType>Form</SubType>
@@ -62,11 +66,11 @@
     <Compile Include="View\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ListCityForm.cs">
+    <Compile Include="View\CityListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ListCityForm.Designer.cs">
-      <DependentUpon>ListCityForm.cs</DependentUpon>
+    <Compile Include="View\CityListForm.Designer.cs">
+      <DependentUpon>CityListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DistrictDetailForm.cs">
       <SubType>Form</SubType>
@@ -74,11 +78,11 @@
     <Compile Include="View\DistrictDetailForm.Designer.cs">
       <DependentUpon>DistrictDetailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ListDistrictForm.cs">
+    <Compile Include="View\DistrictListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ListDistrictForm.Designer.cs">
-      <DependentUpon>ListDistrictForm.cs</DependentUpon>
+    <Compile Include="View\DistrictListForm.Designer.cs">
+      <DependentUpon>DistrictListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,14 +96,14 @@
     <EmbeddedResource Include="View\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ListCityForm.resx">
-      <DependentUpon>ListCityForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\CityListForm.resx">
+      <DependentUpon>CityListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DistrictDetailForm.resx">
       <DependentUpon>DistrictDetailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ListDistrictForm.resx">
-      <DependentUpon>ListDistrictForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\DistrictListForm.resx">
+      <DependentUpon>DistrictListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

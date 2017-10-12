@@ -1,6 +1,6 @@
 ﻿namespace MyCountryApplication.View
 {
-    partial class ListDistrictForm
+    partial class DistrictListForm
     {
         /// <summary>
         /// Required designer variable.
