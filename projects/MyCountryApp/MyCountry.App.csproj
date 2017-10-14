@@ -58,6 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CityInfomation.cs" />
+    <Compile Include="Business\IMyCountryBusiness.cs" />
     <Compile Include="Business\ServiceContext.cs" />
     <Compile Include="ViewModel\DistrictViewModel.cs" />
     <Compile Include="View\AboutForm.cs">

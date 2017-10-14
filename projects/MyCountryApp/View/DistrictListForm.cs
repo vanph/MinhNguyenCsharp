@@ -11,13 +11,13 @@ namespace MyCountryApplication.View
 {
     public partial class DistrictListForm : Form
     {
-        private readonly MyCountryBusiness _myCountryBusiness;
+        private readonly IMyCountryBusiness _myCountryBusiness;
 
         public DistrictListForm()
         {
             InitializeComponent();
             grdDistrict.AutoGenerateColumns = false;
-            _myCountryBusiness = new MyCountryBusiness();
+           _myCountryBusiness = new MyCountryBusiness();
             cbbCity.DisplayMember = nameof(City.Name);
             cbbCity.ValueMember = nameof(City.CityCode);
 
@@ -192,6 +192,7 @@ namespace MyCountryApplication.View
         {
             var listCityForm =new CityListForm();
             listCityForm.ShowDialog();
+
         }
     }
 }

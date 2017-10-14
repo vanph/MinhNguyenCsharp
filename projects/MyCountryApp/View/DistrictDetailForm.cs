@@ -9,7 +9,7 @@ namespace MyCountryApplication.View
 {
     public sealed partial class DistrictDetailForm : Form
     {
-        private readonly MyCountryBusiness _myCountryBusiness;
+        private readonly IMyCountryBusiness _myCountryBusiness;
         private readonly bool _isAddNew;
         private readonly string _selectedCode;
 
