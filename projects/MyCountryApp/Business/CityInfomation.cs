@@ -12,6 +12,7 @@ namespace MyCountryApplication.Business
         {
             DistrictNames = new List<string>();
         }
+        // hàm  public CityInfomation() để tạo mới những district hả anh ?. trên khai báo DistrictNames rồi ạ, hay chỗ này cần nhiều DistrictNames nên phải new liên tục
 
 
         //public int Count
@@ -25,7 +26,7 @@ namespace MyCountryApplication.Business
         //} 
 
         //Calculated Property
-        public int Count => DistrictNames.Count;
+        public int Count =>  DistrictNames.Count;
 
         public string DistrictNameString => string.Join(", ", DistrictNames);
     }
