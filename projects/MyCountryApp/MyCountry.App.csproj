@@ -58,8 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\CityInfomation.cs" />
-    <Compile Include="Business\IMyCountryBusiness.cs" />
+    <Compile Include="Business\CityBusiness.cs" />
+    <Compile Include="ViewModel\CityInfomation.cs" />
+    <Compile Include="Business\DistrictBusiness.cs" />
+    <Compile Include="Business\ICityBusiness.cs" />
+    <Compile Include="Business\IDistrictBusiness.cs" />
     <Compile Include="Business\ServiceContext.cs" />
     <Compile Include="ViewModel\DistrictViewModel.cs" />
     <Compile Include="View\AboutForm.cs">
@@ -88,7 +91,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Business\MyCountryBusiness.cs" />
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

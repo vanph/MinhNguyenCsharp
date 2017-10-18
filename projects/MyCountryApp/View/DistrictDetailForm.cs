@@ -9,7 +9,8 @@ namespace MyCountryApplication.View
 {
     public sealed partial class DistrictDetailForm : Form
     {
-        private readonly IMyCountryBusiness _myCountryBusiness;
+        private readonly IDistrictBusiness _districtBusiness;
+        private readonly ICityBusiness _cityBusiness;
         private readonly bool _isAddNew;
         private readonly string _selectedCode;
 
@@ -25,7 +26,8 @@ namespace MyCountryApplication.View
 
             Text = _isAddNew ? @"Add new District" : @"Edit District";
 
-            _myCountryBusiness = new MyCountryBusiness();
+            _districtBusiness = new DistrictBusiness();
+            _cityBusiness = new CityBusiness();
 
         }
         private void btnCancel_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace MyCountryApplication.View
 
         private void DistrictDetailForm_Load(object sender, EventArgs e)
         {
-            var cities = _myCountryBusiness.GetCities();
+            var cities = _cityBusiness.GetCities();
             cbbCity.DataSource = cities;
             cbbCity.DisplayMember = nameof(CityListForm.Name);
             if (!_isAddNew)
@@ -71,7 +73,7 @@ namespace MyCountryApplication.View
                 if (_isAddNew)
                 {
                     //Todo: check existing district code
-                    var dbContext = new MyCountryEntities();
+                    var dbContext = new MyCountryEntities();//will be removed and replaced by calling api from _districtBusiness
                     var city = cbbCity.SelectedItem as City;
 
                     var district = new District

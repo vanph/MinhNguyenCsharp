@@ -11,13 +11,15 @@ namespace MyCountryApplication.View
 {
     public partial class DistrictListForm : Form
     {
-        private readonly IMyCountryBusiness _myCountryBusiness;
+        private readonly ICityBusiness _cityBusiness;
+        private readonly IDistrictBusiness _districtBusiness;
 
         public DistrictListForm()
         {
             InitializeComponent();
             grdDistrict.AutoGenerateColumns = false;
-           _myCountryBusiness = new MyCountryBusiness();
+            _cityBusiness = new CityBusiness();
+            _districtBusiness = new DistrictBusiness();
             cbbCity.DisplayMember = nameof(City.Name);
             cbbCity.ValueMember = nameof(City.CityCode);
 
@@ -34,7 +36,7 @@ namespace MyCountryApplication.View
             var keyword = txtSearch.Text;
             var city = cbbCity.SelectedItem as City;
             var cityCode = city != null ? city.CityCode : string.Empty;
-            grdDistrict.DataSource = _myCountryBusiness.SearchDistricts(keyword, cityCode);
+            grdDistrict.DataSource = _districtBusiness.SearchDistricts(keyword, cityCode);
         }
 
 
@@ -57,7 +59,7 @@ namespace MyCountryApplication.View
 
         private void LoadCities()
         {
-            cbbCity.DataSource = _myCountryBusiness.GetCities();
+            cbbCity.DataSource = _cityBusiness.GetCities();
             cbbCity.SelectedIndex = -1;
 
         }

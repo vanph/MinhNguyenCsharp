@@ -1,27 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MyCountryApplication.ViewModel;
-using MyCountry.DataAccess;
 using MyCountryApplication.Business;
 
 namespace MyCountryApplication.View
 {
     public partial class CityListForm : Form
     {
-        private readonly IMyCountryBusiness _myCountryBusiness ;
+        private readonly ICityBusiness _cityBusiness ;
 
         public CityListForm()
         {
             InitializeComponent();
             
-            _myCountryBusiness = new MyCountryBusiness();
+            _cityBusiness = new CityBusiness();
 
             dataGridView1.AutoGenerateColumns = false;
         }
@@ -33,7 +24,7 @@ namespace MyCountryApplication.View
 
         private void CityListForm_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = _myCountryBusiness.GetCityInformaitons();
+            dataGridView1.DataSource = _cityBusiness.GetCityInformations();
         }
     }
 }
