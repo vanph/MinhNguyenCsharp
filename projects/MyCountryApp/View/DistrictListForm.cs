@@ -36,7 +36,7 @@ namespace MyCountryApplication.View
             var keyword = txtSearch.Text;
             var city = cbbCity.SelectedItem as City;
             var cityCode = city != null ? city.CityCode : string.Empty;
-            grdDistrict.DataSource = _districtBusiness.SearchDistricts(keyword, cityCode);
+            grdDistrict.DataSource = _districtBusiness.Search(keyword, cityCode);
         }
 
 
@@ -59,7 +59,7 @@ namespace MyCountryApplication.View
 
         private void LoadCities()
         {
-            cbbCity.DataSource = _cityBusiness.GetCities();
+            //cbbCity.DataSource = _cityBusiness.GetCities();
             cbbCity.SelectedIndex = -1;
 
         }

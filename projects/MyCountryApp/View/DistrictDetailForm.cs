@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Windows.Forms;
 using MyCountryApplication.Business;
-using MyCountry.DataAccess;
 using MyCountry.DataAccess.Model;
+using MyCountryApplication.Exceptions;
 
 namespace MyCountryApplication.View
 {
@@ -40,13 +40,14 @@ namespace MyCountryApplication.View
         {
             var cities = _cityBusiness.GetCities();
             cbbCity.DataSource = cities;
-            cbbCity.DisplayMember = nameof(CityListForm.Name);
+            cbbCity.DisplayMember = nameof(City.Name);
+
             if (!_isAddNew)
             {
                 cbbCity.Enabled = false;
                 txtCode.Enabled = false;
-                var dbContext = new MyCountryEntities();
-                var editingDistrict = dbContext.Districts.FirstOrDefault(x => x.DistrictCode == _selectedCode);
+
+                var editingDistrict = _districtBusiness.GetByCode(_selectedCode);
                 if (editingDistrict != null)
                 {
                     txtName.Text = editingDistrict.Name;
@@ -61,8 +62,6 @@ namespace MyCountryApplication.View
                     btnSave.Enabled = false;
                 }
             }
-          
-
 
         }
 
@@ -70,49 +69,37 @@ namespace MyCountryApplication.View
         {
             try
             {
+                var city = cbbCity.SelectedItem as City;
+
+                var districtInfo = new District
+                {
+                    Name = txtName.Text,
+                    DistrictCode = txtCode.Text,
+                    Type = txtType.Text,
+                    CityCode = city != null ? city.CityCode : string.Empty
+                };
+
                 if (_isAddNew)
                 {
-                    //Todo: check existing district code
-                    var dbContext = new MyCountryEntities();//will be removed and replaced by calling api from _districtBusiness
-                    var city = cbbCity.SelectedItem as City;
-
-                    var district = new District
-                    {
-                        Name = txtName.Text,
-                        DistrictCode = txtCode.Text,
-                        Type = txtType.Text,
-                        CityCode = city != null ? city.CityCode : string.Empty,
-                        CreatedDate = DateTime.Now,
-                        CreatedBy =ServiceContext.UserName,
-                        ModifiedDate = DateTime.Now,
-                        ModifiedBy = ServiceContext.UserName
-                    };
-                    dbContext.Districts.Add(district);
-                    dbContext.SaveChanges();
+                    _districtBusiness.Add(districtInfo);
                 }
                 else
                 {
-                    //Todo: Implement editing district
-
-                    var dbContext = new MyCountryEntities();
-                    var district = dbContext.Districts.FirstOrDefault(x => x.DistrictCode == _selectedCode);
-                    if (district != null)
-                    {
-                        district.Name = txtName.Text;
-                        district.Type = txtType.Text;
-                        district.ModifiedDate = DateTime.Now;
-                        district.ModifiedBy = ServiceContext.UserName;
-                        dbContext.SaveChanges();
-                    }
+                    _districtBusiness.Update(districtInfo);
                 }
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+            }
+            catch (UpdateDistrictException ex)
+            {
+                MessageBox.Show(ex.Message,@"Message",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
-   
+
         }
 
 

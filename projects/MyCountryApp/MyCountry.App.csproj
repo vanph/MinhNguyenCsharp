@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\CityBusiness.cs" />
+    <Compile Include="Exceptions\UpdateDistrictException.cs" />
     <Compile Include="ViewModel\CityInfomation.cs" />
     <Compile Include="Business\DistrictBusiness.cs" />
     <Compile Include="Business\ICityBusiness.cs" />
