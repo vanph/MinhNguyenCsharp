@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using MyCountry.Business;
+using MyCountry.Business.ViewModel;
 using MyCountry.DataAccess;
 using MyCountry.DataAccess.Model;
-using MyCountryApplication.Business;
-using MyCountryApplication.ViewModel;
 
 
 namespace MyCountryApplication.View
@@ -59,7 +59,7 @@ namespace MyCountryApplication.View
 
         private void LoadCities()
         {
-            //cbbCity.DataSource = _cityBusiness.GetCities();
+            cbbCity.DataSource = _cityBusiness.GetCities();
             cbbCity.SelectedIndex = -1;
 
         }

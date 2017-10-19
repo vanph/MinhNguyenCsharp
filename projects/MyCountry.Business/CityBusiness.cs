@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using MyCountry.Business.ViewModel;
 using MyCountry.DataAccess;
 using MyCountry.DataAccess.Model;
-using MyCountryApplication.ViewModel;
 
-namespace MyCountryApplication.Business
+namespace MyCountry.Business
 {
     public class CityBusiness : ICityBusiness
     {
@@ -15,6 +15,7 @@ namespace MyCountryApplication.Business
             var cities = dbContext.Cities.ToList();
             return cities;
         }
+
         public List<CityInfomation> GetCityInformations()
         {
             var dbContext = new MyCountryEntities();
@@ -69,7 +70,7 @@ namespace MyCountryApplication.Business
             var cityInfomations = dbContext.Cities.Select(x => new CityInfomation
             {
                 CityName = x.Name,
-                DistrictNames = x.Districts.Select(d => d.Name).ToList()
+                DistrictNames = Enumerable.ToList<string>(x.Districts.Select(d => d.Name))
             }).ToList();
             
             return cityInfomations;

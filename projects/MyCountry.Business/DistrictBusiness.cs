@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MyCountry.Business.Exceptions;
+using MyCountry.Business.ViewModel;
 using MyCountry.DataAccess;
 using MyCountry.DataAccess.Model;
-using MyCountryApplication.Exceptions;
-using MyCountryApplication.ViewModel;
 
-namespace MyCountryApplication.Business
+namespace MyCountry.Business
 {
     public class DistrictBusiness : IDistrictBusiness
     {
@@ -61,7 +61,7 @@ namespace MyCountryApplication.Business
             if (existingDistrict != null)
             {
                 //raise duplicated district error here
-                throw new UpdateDistrictException($"District code {existingDistrict.DistrictCode} exists.");
+                throw new DistrictValidationException($"District code {existingDistrict.DistrictCode} exists.");
             }
 
             var district = new District

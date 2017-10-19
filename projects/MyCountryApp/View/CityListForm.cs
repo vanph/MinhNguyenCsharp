@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using MyCountryApplication.Business;
+using MyCountry.Business;
 
 namespace MyCountryApplication.View
 {

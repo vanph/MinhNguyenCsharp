@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using MyCountryApplication.Business;
+using MyCountry.Business;
+using MyCountry.Business.Exceptions;
 using MyCountry.DataAccess.Model;
-using MyCountryApplication.Exceptions;
 
 namespace MyCountryApplication.View
 {
@@ -91,7 +91,7 @@ namespace MyCountryApplication.View
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            catch (UpdateDistrictException ex)
+            catch (DistrictValidationException ex)
             {
                 MessageBox.Show(ex.Message,@"Message",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }

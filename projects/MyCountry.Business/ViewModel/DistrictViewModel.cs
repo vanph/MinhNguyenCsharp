@@ -1,5 +1,5 @@
 ﻿
-namespace MyCountryApplication.ViewModel
+namespace MyCountry.Business.ViewModel
 {
     public class DistrictViewModel
     {

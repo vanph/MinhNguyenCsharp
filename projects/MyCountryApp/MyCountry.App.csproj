@@ -58,14 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\CityBusiness.cs" />
-    <Compile Include="Exceptions\UpdateDistrictException.cs" />
-    <Compile Include="ViewModel\CityInfomation.cs" />
-    <Compile Include="Business\DistrictBusiness.cs" />
-    <Compile Include="Business\ICityBusiness.cs" />
-    <Compile Include="Business\IDistrictBusiness.cs" />
-    <Compile Include="Business\ServiceContext.cs" />
-    <Compile Include="ViewModel\DistrictViewModel.cs" />
     <Compile Include="View\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +128,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyCountry.Business\MyCountry.Business.csproj">
+      <Project>{e2884f78-e968-416f-a20b-6a369b5b232d}</Project>
+      <Name>MyCountry.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyCountry.DataAccess\MyCountry.DataAccess.csproj">
       <Project>{d6903d52-3978-4746-8c50-2f242f48dd5f}</Project>
       <Name>MyCountry.DataAccess</Name>

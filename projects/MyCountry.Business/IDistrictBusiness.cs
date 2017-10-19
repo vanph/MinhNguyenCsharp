@@ -1,8 +1,8 @@
 using System.Collections.Generic;
+using MyCountry.Business.ViewModel;
 using MyCountry.DataAccess.Model;
-using MyCountryApplication.ViewModel;
 
-namespace MyCountryApplication.Business
+namespace MyCountry.Business
 {
     public interface IDistrictBusiness
     {
