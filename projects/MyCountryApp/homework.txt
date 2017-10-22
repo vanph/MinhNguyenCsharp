@@ -1,0 +1,37 @@
+﻿http://services.groupkt.com/state/get/USA/all
+
+
+Help:
+Option 1: HttpClient , WebClient...
+Option 2: http://restsharp.org/
+
+
+Json
+
+Json deserialize
+
+https://jsonutils.com/
+
+=>
+
+public class Result
+  {
+        public int Id { get; set; }
+        public string Country { get; set; }
+        public string Name { get; set; }
+        public string Abbr { get; set; }
+        public string Area { get; set; }
+        public string LargestCity { get; set; }
+        public string Capital { get; set; }
+    }
+
+    public class RestResponse
+    {
+        public IList<string> Messages { get; set; }
+        public IList<Result> Result { get; set; }
+    }
+
+    public class Example
+    {
+        public RestResponse RestResponse { get; set; }
+    }
