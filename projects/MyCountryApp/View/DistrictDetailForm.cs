@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using MyCountry.Business;
 using MyCountry.Business.Exceptions;
 using MyCountry.DataAccess.Model;
+using MyCountryApplication.Enumerations;
 
 namespace MyCountryApplication.View
 {
@@ -11,20 +12,34 @@ namespace MyCountryApplication.View
     {
         private readonly IDistrictBusiness _districtBusiness;
         private readonly ICityBusiness _cityBusiness;
-        private readonly bool _isAddNew;
+        //private readonly bool _isAddNew;
+        private readonly EditMode _editMode;
         private readonly string _selectedCode;
 
-        public DistrictDetailForm(bool isAddNew, string code = "")
+        public DistrictDetailForm(EditMode editMode, string code = "")
         {
             InitializeComponent();
-            _isAddNew = isAddNew;
-            if (!isAddNew)
+
+            _editMode = editMode;
+
+            if (_editMode != EditMode.AddNew)
             {
                 _selectedCode = code;
 
             }
 
-            Text = _isAddNew ? @"Add new District" : @"Edit District";
+            switch (editMode)
+            {
+                case EditMode.AddNew:
+                    Text = @"Add new District";
+                    break;
+                case EditMode.Edit:
+                    Text = @"Edit District";
+                    break;
+                case EditMode.View:
+                    Text = @"View District Details";
+                    break;
+            }
 
             _districtBusiness = new DistrictBusiness();
             _cityBusiness = new CityBusiness();
@@ -42,10 +57,19 @@ namespace MyCountryApplication.View
             cbbCity.DataSource = cities;
             cbbCity.DisplayMember = nameof(City.Name);
 
-            if (!_isAddNew)
+            var canSave = _editMode != EditMode.View;
+            btnSave.Visible = canSave;
+            btnCancel.Text = canSave ? "Cancel": "Close";
+
+            //EditMode in View, Edit
+            if (_editMode == EditMode.View || _editMode == EditMode.Edit)
             {
+                var editable = _editMode == EditMode.Edit;
+                
                 cbbCity.Enabled = false;
                 txtCode.Enabled = false;
+                txtName.Enabled = editable;
+                txtType.Enabled = editable;
 
                 var editingDistrict = _districtBusiness.GetByCode(_selectedCode);
                 if (editingDistrict != null)
@@ -69,6 +93,11 @@ namespace MyCountryApplication.View
         {
             try
             {
+                if (_editMode == EditMode.View)
+                {
+                    return;
+                }
+
                 var city = cbbCity.SelectedItem as City;
 
                 var districtInfo = new District
@@ -79,21 +108,22 @@ namespace MyCountryApplication.View
                     CityCode = city != null ? city.CityCode : string.Empty
                 };
 
-                if (_isAddNew)
+                if (_editMode == EditMode.AddNew)
                 {
                     _districtBusiness.Add(districtInfo);
                 }
-                else
+                else if (_editMode == EditMode.Edit)
                 {
                     _districtBusiness.Update(districtInfo);
                 }
 
-                this.DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
+
                 this.Close();
             }
             catch (DistrictValidationException ex)
             {
-                MessageBox.Show(ex.Message,@"Message",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, @"Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             catch (Exception exception)
             {

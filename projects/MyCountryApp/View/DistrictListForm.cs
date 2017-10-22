@@ -5,6 +5,7 @@ using MyCountry.Business;
 using MyCountry.Business.ViewModel;
 using MyCountry.DataAccess;
 using MyCountry.DataAccess.Model;
+using MyCountryApplication.Enumerations;
 
 
 namespace MyCountryApplication.View
@@ -89,7 +90,7 @@ namespace MyCountryApplication.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var frmDetail = new DistrictDetailForm(true);
+            var frmDetail = new DistrictDetailForm(EditMode.AddNew);
             var dialogResult = frmDetail.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
@@ -105,7 +106,7 @@ namespace MyCountryApplication.View
                 var districtViewModel = grdDistrict.SelectedRows[0].DataBoundItem as DistrictViewModel;
                 if (districtViewModel != null)
                 {
-                    var frmDetail = new DistrictDetailForm(false, districtViewModel.DistrictCode);
+                    var frmDetail = new DistrictDetailForm(EditMode.Edit, districtViewModel.DistrictCode);
                     var dialogResult = frmDetail.ShowDialog();
                     if (dialogResult == DialogResult.OK)
                     {
@@ -117,6 +118,23 @@ namespace MyCountryApplication.View
             else
             {
                 MessageBox.Show(@"Please select a district to edit", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            if (grdDistrict.SelectedRows.Count > 0)
+            {
+                var districtViewModel = grdDistrict.SelectedRows[0].DataBoundItem as DistrictViewModel;
+                if (districtViewModel != null)
+                {
+                    var frmDetail = new DistrictDetailForm(EditMode.View, districtViewModel.DistrictCode);
+                    frmDetail.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Please select a district to view details", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -196,5 +214,7 @@ namespace MyCountryApplication.View
             listCityForm.ShowDialog();
 
         }
+
+        
     }
 }

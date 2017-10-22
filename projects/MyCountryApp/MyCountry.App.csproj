@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerations\EditMode.cs" />
     <Compile Include="View\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>

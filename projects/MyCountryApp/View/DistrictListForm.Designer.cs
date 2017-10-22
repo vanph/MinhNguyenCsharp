@@ -64,6 +64,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnClearSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnView = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdDistrict)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -240,7 +241,7 @@
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.Location = new System.Drawing.Point(43, 16);
+            this.btnAdd.Location = new System.Drawing.Point(151, 16);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 30);
             this.btnAdd.TabIndex = 7;
@@ -252,7 +253,7 @@
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit.Location = new System.Drawing.Point(142, 16);
+            this.btnEdit.Location = new System.Drawing.Point(250, 16);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 30);
             this.btnEdit.TabIndex = 7;
@@ -264,7 +265,7 @@
             // 
             this.btn_delete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_delete.Location = new System.Drawing.Point(241, 16);
+            this.btn_delete.Location = new System.Drawing.Point(349, 16);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(90, 30);
             this.btn_delete.TabIndex = 7;
@@ -275,6 +276,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.btnEdit);
+            this.panel4.Controls.Add(this.btnView);
             this.panel4.Controls.Add(this.btnAdd);
             this.panel4.Controls.Add(this.btn_delete);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -446,7 +448,19 @@
             this.panel2.Size = new System.Drawing.Size(784, 66);
             this.panel2.TabIndex = 4;
             // 
-            // ListDistrictForm
+            // btnView
+            // 
+            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnView.Location = new System.Drawing.Point(55, 16);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(90, 30);
+            this.btnView.TabIndex = 7;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // DistrictListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -458,7 +472,7 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "ListDistrictForm";
+            this.Name = "DistrictListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Country Application";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -518,6 +532,7 @@
         private System.Windows.Forms.ToolStripMenuItem cityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button btnView;
     }
 }
 
