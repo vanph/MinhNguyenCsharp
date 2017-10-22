@@ -11,15 +11,16 @@ namespace MyCountry.Business
 
         public List<City> GetCities()
         {
-            var dbContext = new MyCountryEntities();
-            var cities = dbContext.Cities.ToList();
-            return cities;
+            using (var dbContext = new MyCountryEntities())
+            {
+                return dbContext.Cities.ToList();
+            }
+           
         }
 
         public List<CityInfomation> GetCityInformations()
         {
-            var dbContext = new MyCountryEntities();
-
+           
             //1
             //var cityInfomations = dbContext.Districts.GroupBy(d => d.City.Name).Select(
             //    c => new CityInfomation()
@@ -67,13 +68,16 @@ namespace MyCountry.Business
 
             //Lazy loading
 
-            var cityInfomations = dbContext.Cities.Select(x => new CityInfomation
+            using (var dbContext = new MyCountryEntities())
             {
-                CityName = x.Name,
-                DistrictNames = Enumerable.ToList<string>(x.Districts.Select(d => d.Name))
-            }).ToList();
-            
-            return cityInfomations;
+                var cityInfomations = dbContext.Cities.Select(x => new CityInfomation
+                {
+                    CityName = x.Name,
+                    DistrictNames = Enumerable.ToList<string>(x.Districts.Select(d => d.Name))
+                }).ToList();
+
+                return cityInfomations;
+            }
         }
 
     }
