@@ -73,7 +73,7 @@ namespace MyCountry.Business
                 var cityInfomations = dbContext.Cities.Select(x => new CityInfomation
                 {
                     CityName = x.Name,
-                    DistrictNames = Enumerable.ToList<string>(x.Districts.Select(d => d.Name))
+                    DistrictNames = x.Districts.Select(d => d.Name).ToList()
                 }).ToList();
 
                 return cityInfomations;

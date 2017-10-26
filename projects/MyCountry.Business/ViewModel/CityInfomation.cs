@@ -12,7 +12,6 @@ namespace MyCountry.Business.ViewModel
         {
             DistrictNames = new List<string>();
         }
-        // hàm  public CityInfomation() để tạo mới những district hả anh ?. trên khai báo DistrictNames rồi ạ, hay chỗ này cần nhiều DistrictNames nên phải new liên tục
 
 
         //public int Count
