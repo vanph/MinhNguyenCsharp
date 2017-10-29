@@ -49,6 +49,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnView = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCityName = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnClearSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnView = new System.Windows.Forms.Button();
+            this.uSAStateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdDistrict)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -185,6 +186,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.cityToolStripMenuItem,
+            this.uSAStateToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -284,6 +286,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(784, 71);
             this.panel4.TabIndex = 8;
+            // 
+            // btnView
+            // 
+            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnView.Location = new System.Drawing.Point(55, 16);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(90, 30);
+            this.btnView.TabIndex = 7;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // panel5
             // 
@@ -448,17 +462,12 @@
             this.panel2.Size = new System.Drawing.Size(784, 66);
             this.panel2.TabIndex = 4;
             // 
-            // btnView
+            // uSAStateToolStripMenuItem
             // 
-            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnView.Location = new System.Drawing.Point(55, 16);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(90, 30);
-            this.btnView.TabIndex = 7;
-            this.btnView.Text = "View";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            this.uSAStateToolStripMenuItem.Name = "uSAStateToolStripMenuItem";
+            this.uSAStateToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.uSAStateToolStripMenuItem.Text = "Countries";
+            this.uSAStateToolStripMenuItem.Click += new System.EventHandler(this.uSAStateToolStripMenuItem_Click);
             // 
             // DistrictListForm
             // 
@@ -533,6 +542,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.ToolStripMenuItem uSAStateToolStripMenuItem;
     }
 }
 

@@ -215,6 +215,10 @@ namespace MyCountryApplication.View
 
         }
 
-        
+        private void uSAStateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           var stateForm= new CountryForm();
+            stateForm.ShowDialog();
+        }
     }
 }
